@@ -29,20 +29,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0-nullsafety.3"
-  charts_common:
-    dependency: transitive
-    description:
-      name: charts_common
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.9.0"
-  charts_flutter:
-    dependency: "direct dev"
-    description:
-      name: charts_flutter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.9.0"
   clock:
     dependency: transitive
     description:
@@ -71,13 +57,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0-nullsafety.3"
-  fl_animated_linechart:
-    dependency: "direct dev"
-    description:
-      name: fl_animated_linechart
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.4"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -89,19 +68,12 @@ packages:
     source: sdk
     version: "0.0.0"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.16.1"
-  logging:
-    dependency: transitive
-    description:
-      name: logging
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.11.4"
   matcher:
     dependency: transitive
     description:
@@ -131,7 +103,7 @@ packages:
     source: hosted
     version: "1.9.2"
   settings_ui:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: settings_ui
       url: "https://pub.dartlang.org"
@@ -171,7 +143,7 @@ packages:
     source: hosted
     version: "1.1.0-nullsafety.3"
   syncfusion_flutter_charts:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: syncfusion_flutter_charts
       url: "https://pub.dartlang.org"

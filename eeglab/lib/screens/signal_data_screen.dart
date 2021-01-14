@@ -1,11 +1,12 @@
+import 'dart:async';
 import 'dart:math';
 
-import 'package:eeglab/models/linear_sales.dart';
+import 'package:eeglab/models/EEGData.dart';
+import 'package:eeglab/widgets/MyChart.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 
 class SignalDataScreen extends StatefulWidget {
-  SignalDataScreen({Key key}) : super(key: key);
+  const SignalDataScreen({Key key}) : super(key: key);
   static String routeName = '/signal';
 
   @override
@@ -13,41 +14,56 @@ class SignalDataScreen extends StatefulWidget {
 }
 
 class _SignalDataScreenState extends State<SignalDataScreen> {
-  final List<LinearSales> _list = <LinearSales>[];
+  final StreamController<EEGData> streamController =
+      StreamController.broadcast();
 
   final rand = Random();
 
   bool streamOn = false;
 
-  int i = 0;
+  final List<EEGData> _list = [];
 
-  LinearSales stream() {
-    return LinearSales(i, rand.nextDouble() * 1000);
-  }
+  int counter = 0;
 
   Future startStream() async {
     streamOn = true;
     while (streamOn) {
-      await Future<LinearSales>.delayed(const Duration(milliseconds: 2));
-      setState(() {
-        _list.add(stream());
-        if (_list.length > 100) {
-          _list.removeAt(0);
-        }
-        i++;
-      });
+      await Future<EEGData>.delayed(const Duration(milliseconds: 2));
+      streamController.add(EEGData(DateTime.now(), [
+        rand.nextDouble(),
+        rand.nextDouble(),
+        rand.nextDouble(),
+        rand.nextDouble(),
+        rand.nextDouble(),
+        rand.nextDouble(),
+        rand.nextDouble(),
+        rand.nextDouble()
+      ]));
     }
   }
 
   @override
   void initState() {
-    startStream();
     super.initState();
+    streamController.stream.listen((data) {
+      counter++;
+      if (counter >= 9) {
+        setState(() {
+          _list.add(data);
+          if (_list.length > 100) {
+            _list.removeAt(0);
+          }
+        });
+        counter = 0;
+      }
+    });
+    startStream();
   }
 
   @override
   void dispose() {
     streamOn = false;
+    streamController.close();
     super.dispose();
   }
 
@@ -55,23 +71,23 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(),
-        title: new Text(
+        leading: const BackButton(),
+        title: const Text(
           'SmartEEG',
         ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
-        child: SfCartesianChart(
-          title: ChartTitle(text: 'Example Live Data'),
-          tooltipBehavior: TooltipBehavior(enable: true),
-          primaryXAxis: CategoryAxis(),
-          series: <ChartSeries>[
-            LineSeries<LinearSales, int>(
-                enableTooltip: true,
-                dataSource: _list,
-                xValueMapper: (LinearSales sales, _) => sales.year,
-                yValueMapper: (LinearSales sales, _) => sales.sales)
+        child: Column(
+          children: [
+            MyChart(_list, 0),
+            MyChart(_list, 1),
+            MyChart(_list, 2),
+            MyChart(_list, 3),
+            MyChart(_list, 4),
+            MyChart(_list, 5),
+            MyChart(_list, 6),
+            MyChart(_list, 7),
           ],
         ),
       ),
