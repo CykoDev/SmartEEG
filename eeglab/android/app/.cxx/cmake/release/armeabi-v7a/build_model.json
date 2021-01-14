@@ -1,0 +1,72 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android",
+      "sdkFolder": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\build\\app\\intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app",
+      "makeFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\.cxx",
+      "cxxFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx",
+      "ndkFolder": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061",
+      "ndkVersion": "22.0.7026061",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      ""
+    ],
+    "variantName": "release",
+    "soFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\release\\lib",
+    "objFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\release\\obj",
+    "jsonFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\release",
+    "gradleBuildOutputFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\release",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARMEABI_V7A",
+  "abiPlatformVersion": 16,
+  "cxxBuildFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\release\\armeabi-v7a",
+  "jsonFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\release\\armeabi-v7a\\android_gradle_build.json",
+  "gradleBuildOutputFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\release\\armeabi-v7a",
+  "objFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\release\\obj\\armeabi-v7a",
+  "buildCommandFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\release\\armeabi-v7a\\build_command.txt",
+  "buildOutputFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\release\\armeabi-v7a\\build_output.txt",
+  "modelOutputFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\release\\armeabi-v7a\\build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\release\\armeabi-v7a\\CMakeLists.txt",
+    "toolchainWrapperFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\release\\armeabi-v7a\\android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\release\\armeabi-v7a\\build_generation_state.json",
+    "cacheKeyFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_cache_key.json",
+    "compilerCacheUseFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_cache_use.json",
+    "compilerCacheWriteFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\release\\armeabi-v7a\\json_generation_record.json",
+  "compileCommandsJsonFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\release\\armeabi-v7a\\compile_commands.json"
+}

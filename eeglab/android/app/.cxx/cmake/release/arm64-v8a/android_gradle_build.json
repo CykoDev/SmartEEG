@@ -1,0 +1,38 @@
+
+{
+	"buildFiles" : [ "D:/Dropbox/GitHub/SmartEEG/eeglab/android/app/CMakeLists.txt" ],
+	"cleanCommands" : 
+	[
+		"C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\release\\arm64-v8a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"native-lib-Release-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "native-lib",
+			"buildCommand" : "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\release\\arm64-v8a --target native-lib",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=aarch64-none-linux-android21 --gcc-toolchain=C:/Users/skama/AppData/Local/Android/Sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/skama/AppData/Local/Android/Sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "D:/Dropbox/GitHub/SmartEEG/eeglab/android/app/src/main/cpp/native-lib.cpp",
+					"workingDirectory" : "D:/Dropbox/GitHub/SmartEEG/eeglab/android/app/.cxx/cmake/release/arm64-v8a"
+				}
+			],
+			"output" : "D:/Dropbox/GitHub/SmartEEG/eeglab/build/app/intermediates/cmake/release/obj/arm64-v8a/libnative-lib.so",
+			"toolchain" : "3064492021"
+		}
+	},
+	"toolchains" : 
+	{
+		"3064492021" : 
+		{
+			"cCompilerExecutable" : "C:/Users/skama/AppData/Local/Android/Sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "C:/Users/skama/AppData/Local/Android/Sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

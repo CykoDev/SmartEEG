@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\profile\\arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "native-lib-Debug-arm64-v8a": {
+      "artifactName": "native-lib",
+      "buildCommand": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\profile\\arm64-v8a --target native-lib",
+      "abi": "arm64-v8a",
+      "output": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\profile\\obj\\arm64-v8a\\libnative-lib.so"
+    }
+  }
+}

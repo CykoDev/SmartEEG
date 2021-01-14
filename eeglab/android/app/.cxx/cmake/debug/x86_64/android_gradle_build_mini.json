@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\CMakeLists.txt",
+    "C:\\Users\\skama\\AppData\\Local\\Android\\Sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\skama\\AppData\\Local\\Android\\Sdk\\ndk\\22.0.7026061\\build\\cmake\\platforms.cmake"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\x86_64\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-lib-Debug-x86_64": {
+      "artifactName": "native-lib",
+      "buildCommand": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\x86_64\" native-lib",
+      "abi": "x86_64",
+      "output": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\x86_64\\libnative-lib.so",
+      "runtimeFiles": []
+    }
+  }
+}
