@@ -1,9 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'heatmap_screen.dart';
 
-class PairingScreen extends StatelessWidget {
+class PairingScreen extends StatefulWidget {
+  const PairingScreen({Key key}) : super(key: key);
+
   static String routeName = '/pairing';
+  @override
+  _PairingScreenState createState() => _PairingScreenState();
+}
+
+class _PairingScreenState extends State<PairingScreen> {
+  static const MethodChannel platform =
+      MethodChannel('samples.flutter.dev/bluetooth');
+
+  List<String> _deviceList = <String>[];
+
+  Future<void> _getDeviceList() async {
+    var deviceList = <String>[];
+    try {
+      deviceList = await platform.invokeMethod('getDeviceList');
+    } on PlatformException catch (e) {
+      deviceList.add("Failed to get device list: '${e.message}'.");
+    }
+
+    setState(() {
+      _deviceList = deviceList;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +66,15 @@ class PairingScreen extends StatelessWidget {
             child: RaisedButton(
               child: Text('Connect to Device'),
               color: Colors.green,
+              onPressed: _getDeviceList,
+            ),
+          ),
+          for (String device in _deviceList)
+            RaisedButton(
+              child: Text(device),
               onPressed: () =>
                   Navigator.of(context).pushNamed(HeatmapScreen.routeName),
             ),
-          ),
         ],
       ),
     );

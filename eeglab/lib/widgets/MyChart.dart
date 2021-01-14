@@ -1,5 +1,6 @@
 import 'package:eeglab/models/EEGData.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class MyChart extends StatefulWidget {
@@ -27,10 +28,11 @@ class _MyChartState extends State<MyChart> {
       tooltipBehavior: TooltipBehavior(enable: true),
       primaryXAxis: CategoryAxis(),
       series: <ChartSeries>[
-        LineSeries<EEGData, DateTime>(
+        LineSeries<EEGData, String>(
             enableTooltip: true,
             dataSource: _list,
-            xValueMapper: (EEGData data, _) => data.time,
+            xValueMapper: (EEGData data, _) =>
+                DateFormat('kk:mm:ss').format(data.time),
             yValueMapper: (EEGData data, _) => data.data[widget.channel])
       ],
     );
