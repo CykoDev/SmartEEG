@@ -1,6 +1,6 @@
 import 'package:eeglab/models/EEGData.dart';
+import 'package:eeglab/screens/channel_data_screen.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class MyChart extends StatefulWidget {
@@ -24,17 +24,21 @@ class _MyChartState extends State<MyChart> {
 
   @override
   Widget build(BuildContext context) {
-    return SfCartesianChart(
-      tooltipBehavior: TooltipBehavior(enable: true),
-      primaryXAxis: CategoryAxis(),
-      series: <ChartSeries>[
-        LineSeries<EEGData, String>(
-            enableTooltip: true,
-            dataSource: _list,
-            xValueMapper: (EEGData data, _) =>
-                DateFormat('kk:mm:ss').format(data.time),
-            yValueMapper: (EEGData data, _) => data.data[widget.channel])
-      ],
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      child: SfCartesianChart(
+        tooltipBehavior: TooltipBehavior(enable: true),
+        primaryXAxis: CategoryAxis(),
+        series: <ChartSeries>[
+          LineSeries<EEGData, String>(
+              enableTooltip: true,
+              dataSource: _list,
+              xValueMapper: (EEGData data, _) => data.time,
+              yValueMapper: (EEGData data, _) => data.data[widget.channel])
+        ],
+      ),
+      onTap: () => Navigator.of(context)
+          .pushNamed(ChannelDataScreen.routeName, arguments: widget.channel),
     );
   }
 }

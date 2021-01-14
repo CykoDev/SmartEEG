@@ -2,18 +2,20 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:eeglab/models/EEGData.dart';
-import 'package:eeglab/widgets/MyChart.dart';
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
-class SignalDataScreen extends StatefulWidget {
-  const SignalDataScreen({Key key}) : super(key: key);
-  static String routeName = '/signal';
+class ChannelDataScreen extends StatefulWidget {
+  const ChannelDataScreen(this.channel, {Key key}) : super(key: key);
+
+  static const String routeName = '/channel';
+  final int channel;
 
   @override
-  _SignalDataScreenState createState() => _SignalDataScreenState();
+  _ChannelDataScreenState createState() => _ChannelDataScreenState();
 }
 
-class _SignalDataScreenState extends State<SignalDataScreen> {
+class _ChannelDataScreenState extends State<ChannelDataScreen> {
   final StreamController<EEGData> streamController =
       StreamController.broadcast();
 
@@ -87,16 +89,15 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
-        child: Column(
-          children: [
-            Expanded(child: MyChart(_list, 0)),
-            Expanded(child: MyChart(_list, 1)),
-            Expanded(child: MyChart(_list, 2)),
-            Expanded(child: MyChart(_list, 3)),
-            Expanded(child: MyChart(_list, 4)),
-            Expanded(child: MyChart(_list, 5)),
-            Expanded(child: MyChart(_list, 6)),
-            Expanded(child: MyChart(_list, 7)),
+        child: SfCartesianChart(
+          tooltipBehavior: TooltipBehavior(enable: true),
+          primaryXAxis: CategoryAxis(),
+          series: <ChartSeries>[
+            LineSeries<EEGData, String>(
+                enableTooltip: true,
+                dataSource: _list,
+                xValueMapper: (EEGData data, _) => data.time,
+                yValueMapper: (EEGData data, _) => data.data[widget.channel])
           ],
         ),
       ),

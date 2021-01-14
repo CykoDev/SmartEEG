@@ -1,5 +1,5 @@
 class EEGData {
   EEGData(this.time, this.data);
-  final DateTime time;
+  final String time;
   final List<double> data;
 }

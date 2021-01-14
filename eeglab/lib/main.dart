@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'screens/channel_data_screen.dart';
 import 'screens/heatmap_screen.dart';
 import 'screens/pairing_screen.dart';
 import 'screens/settings_screen.dart';
@@ -21,6 +22,8 @@ class MyApp extends StatelessWidget {
         PairingScreen.routeName: (ctx) => PairingScreen(),
         SettingsScreen.routeName: (ctx) => SettingsScreen(),
         SignalDataScreen.routeName: (ctx) => SignalDataScreen(),
+        ChannelDataScreen.routeName: (ctx) => ChannelDataScreen(
+            int.parse(ModalRoute.of(ctx).settings.arguments.toString())),
       },
     );
   }
