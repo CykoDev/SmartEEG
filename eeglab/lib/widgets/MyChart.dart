@@ -4,13 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class MyChart extends StatefulWidget {
-  const MyChart(this.list, this.channel, this.xAxis, this.channelName, {Key key})
+  const MyChart(this.list, this.channel, this.xAxis, this.channelName, this.color, {Key key})
       : super(key: key);
 
   final List<EEGData> list;
   final int channel;
   final bool xAxis;
   final String channelName;
+  final Color color;
 
   @override
   State<StatefulWidget> createState() => _MyChartState();
@@ -34,6 +35,7 @@ class _MyChartState extends State<MyChart> {
           Text(widget.channelName),
           Expanded(
             child: SfCartesianChart(
+              palette: <Color>[widget.color],
               tooltipBehavior: TooltipBehavior(enable: true),
               primaryXAxis: CategoryAxis(
                 isVisible: widget.xAxis,
