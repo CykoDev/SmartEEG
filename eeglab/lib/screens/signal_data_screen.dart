@@ -85,20 +85,74 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
           'SmartEEG',
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Column(
-          children: [
-            Expanded(child: MyChart(_list, 0, false, '1')),
-            Expanded(child: MyChart(_list, 1, false, '2')),
-            Expanded(child: MyChart(_list, 2, false, '3')),
-            Expanded(child: MyChart(_list, 3, false, '4')),
-            Expanded(child: MyChart(_list, 4, false, '5')),
-            Expanded(child: MyChart(_list, 5, false, '6')),
-            Expanded(child: MyChart(_list, 6, false, '7')),
-            Expanded(child: MyChart(_list, 7, true, '8')),
-          ],
-        ),
+      body: ListView(
+        padding: const EdgeInsets.all(10.0),
+        children: [
+          Container(
+            height: 50,
+            child: MyChart(_list, 0, false, '1'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 1, false, '2'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 2, false, '3'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 3, false, '4'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 4, false, '5'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 5, false, '6'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 6, false, '7'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 0, false, '1'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 1, false, '2'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 2, false, '3'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 3, false, '4'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 4, false, '5'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 5, false, '6'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 6, false, '7'),
+          ),
+          Container(
+            height: 50,
+            child: MyChart(_list, 6, false, '7'),
+          ),
+          Container(
+            height: 75,
+            child: MyChart(_list, 7, true, '8'),
+          ),
+        ],
       ),
     );
   }
