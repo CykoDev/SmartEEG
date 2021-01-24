@@ -109,67 +109,67 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
         children: [
           Container(
             height: 50,
-            child: MyChart(_list, 0, false, '1', colors[0]),
+            child: MyChart(_list, channel: 0, channelName: '1', color: colors[0], dyn: false),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 1, false, '2', colors[1]),
+            child: MyChart(_list, channel: 1, channelName: '2', color: colors[1]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 2, false, '3', colors[2]),
+            child: MyChart(_list, channel: 2, channelName: '3', color: colors[2]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 3, false, '4', colors[3]),
+            child: MyChart(_list, channel: 3, channelName: '4', color: colors[3]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 4, false, '5', colors[4]),
+            child: MyChart(_list, channel: 4, channelName: '5', color: colors[4]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 5, false, '6', colors[5]),
+            child: MyChart(_list, channel: 5, channelName: '6', color: colors[5]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 6, false, '7', colors[6]),
+            child: MyChart(_list, channel: 6, channelName: '7', color: colors[6]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 0, false, '1', colors[7]),
+            child: MyChart(_list, channel: 0, channelName: '1', color: colors[7]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 1, false, '2', colors[8]),
+            child: MyChart(_list, channel: 1, channelName: '2', color: colors[8]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 2, false, '3', colors[9]),
+            child: MyChart(_list, channel: 2, channelName: '3', color: colors[9]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 3, false, '4', colors[10]),
+            child: MyChart(_list, channel: 3, channelName: '4', color: colors[10]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 4, false, '5', colors[12]),
+            child: MyChart(_list, channel: 4, channelName: '5', color: colors[12]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 5, false, '6', colors[13]),
+            child: MyChart(_list, channel: 5, channelName: '6', color: colors[13]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 6, false, '7', colors[14]),
+            child: MyChart(_list, channel: 6, channelName: '7', color: colors[14]),
           ),
           Container(
             height: 50,
-            child: MyChart(_list, 6, false, '7', colors[15]),
+            child: MyChart(_list, channel: 6, channelName: '7', color: colors[15]),
           ),
           Container(
             height: 75,
-            child: MyChart(_list, 7, true, '8', colors[11]),
+            child: MyChart(_list, channel: 7, xAxis: true, channelName: '8', color: colors[11]),
           ),
         ],
       ),

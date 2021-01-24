@@ -4,7 +4,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class MyChart extends StatefulWidget {
-  const MyChart(this.list, this.channel, this.xAxis, this.channelName, this.color, {Key key})
+  const MyChart(this.list,
+      {this.channel,
+      this.xAxis = false,
+      this.channelName,
+      this.color,
+      this.dyn = true,
+      this.min = 0,
+      this.max = 1,
+      Key key})
       : super(key: key);
 
   final List<EEGData> list;
@@ -12,6 +20,9 @@ class MyChart extends StatefulWidget {
   final bool xAxis;
   final String channelName;
   final Color color;
+  final bool dyn;
+  final double min;
+  final double max;
 
   @override
   State<StatefulWidget> createState() => _MyChartState();
@@ -41,14 +52,12 @@ class _MyChartState extends State<MyChart> {
                 isVisible: widget.xAxis,
                 // interval: 5,
               ),
-              primaryYAxis: NumericAxis(
-                maximum: 1.7,
-                minimum: -1.7,
-                interval: 1,
-                // title: AxisTitle(
-                //   text: 'Channel Y',
-                // ),
-              ),
+              primaryYAxis: widget.dyn
+                  ? NumericAxis()
+                  : NumericAxis(
+                      maximum: widget.max,
+                      minimum: widget.min,
+                    ),
               series: <ChartSeries>[
                 LineSeries<EEGData, String>(
                     enableTooltip: true,
