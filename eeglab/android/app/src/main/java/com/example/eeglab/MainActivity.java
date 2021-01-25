@@ -52,9 +52,9 @@ public class MainActivity extends FlutterActivity {
         if (pairedDevices.size() > 0) {
             // There are paired devices. Get the name and address of each paired device.
             for (BluetoothDevice device : pairedDevices) {
-                if(device.getName().contains("SMARTING")) {
+                // if(device.getName().contains("SMARTING")) {
                     deviceList.add(device.getName());
-                }
+                // }
             }
         }
 

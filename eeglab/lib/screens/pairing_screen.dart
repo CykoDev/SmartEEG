@@ -18,7 +18,7 @@ class _PairingScreenState extends State<PairingScreen> {
   List<String> _deviceList = <String>[];
 
   Future<void> _getDeviceList() async {
-    var deviceList = <String>[];
+    var deviceList = <dynamic>[];
     try {
       deviceList = await platform.invokeMethod('getDeviceList');
     } on PlatformException catch (e) {
@@ -26,7 +26,7 @@ class _PairingScreenState extends State<PairingScreen> {
     }
 
     setState(() {
-      _deviceList = deviceList;
+      _deviceList = (deviceList as List)?.map((dynamic item) => item as String)?.toList();
     });
   }
 
