@@ -1,38 +1,43 @@
-
 {
-	"buildFiles" : [ "D:/Dropbox/GitHub/SmartEEG/eeglab/android/app/CMakeLists.txt" ],
-	"cleanCommands" : 
-	[
-		"C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\profile\\x86 --target clean"
-	],
-	"cppFileExtensions" : [ "cpp" ],
-	"libraries" : 
-	{
-		"native-lib-Debug-x86" : 
-		{
-			"abi" : "x86",
-			"artifactName" : "native-lib",
-			"buildCommand" : "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\profile\\x86 --target native-lib",
-			"buildType" : "debug",
-			"files" : 
-			[
-				
-				{
-					"flags" : "  --target=i686-none-linux-android16 --gcc-toolchain=C:/Users/skama/AppData/Local/Android/Sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/skama/AppData/Local/Android/Sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
-					"src" : "D:/Dropbox/GitHub/SmartEEG/eeglab/android/app/src/main/cpp/native-lib.cpp",
-					"workingDirectory" : "D:/Dropbox/GitHub/SmartEEG/eeglab/android/app/.cxx/cmake/profile/x86"
-				}
-			],
-			"output" : "D:/Dropbox/GitHub/SmartEEG/eeglab/build/app/intermediates/cmake/profile/obj/x86/libnative-lib.so",
-			"toolchain" : "3064492021"
-		}
-	},
-	"toolchains" : 
-	{
-		"3064492021" : 
-		{
-			"cCompilerExecutable" : "C:/Users/skama/AppData/Local/Android/Sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
-			"cppCompilerExecutable" : "C:/Users/skama/AppData/Local/Android/Sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
-		}
-	}
+  "stringTable": {
+    "0": "D:/Dropbox/GitHub/SmartEEG/eeglab/android/app/.cxx/cmake/profile/x86",
+    "1": "--target=i686-none-linux-android16 --gcc-toolchain=C:/Users/skama/AppData/Local/Android/Sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/skama/AppData/Local/Android/Sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\CMakeLists.txt",
+    "C:\\Users\\skama\\AppData\\Local\\Android\\Sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\skama\\AppData\\Local\\Android\\Sdk\\ndk\\22.0.7026061\\build\\cmake\\platforms.cmake"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\profile\\x86\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\profile\\x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-lib-Debug-x86": {
+      "buildCommand": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\profile\\x86\" native-lib",
+      "buildType": "debug",
+      "toolchain": "4163270823",
+      "abi": "x86",
+      "artifactName": "native-lib",
+      "files": [
+        {
+          "src": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\src\\main\\cpp\\native-lib.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\profile\\x86\\libnative-lib.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "4163270823": {
+      "cppCompilerExecutable": "C:\\Users\\skama\\AppData\\Local\\Android\\Sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
 }

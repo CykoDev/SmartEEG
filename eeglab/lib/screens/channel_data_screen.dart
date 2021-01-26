@@ -5,6 +5,8 @@ import 'package:eeglab/models/EEGData.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
+import 'pairing_screen.dart';
+
 class ChannelDataScreen extends StatefulWidget {
   const ChannelDataScreen(this.channel, {Key key}) : super(key: key);
 
@@ -16,9 +18,6 @@ class ChannelDataScreen extends StatefulWidget {
 }
 
 class _ChannelDataScreenState extends State<ChannelDataScreen> {
-  final StreamController<EEGData> streamController =
-      StreamController.broadcast();
-
   final rand = Random();
 
   bool streamOn = false;
