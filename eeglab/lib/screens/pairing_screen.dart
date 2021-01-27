@@ -1,7 +1,16 @@
+import 'dart:async';
+
+import 'package:eeglab/models/EEGData.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'heatmap_screen.dart';
+
+const EventChannel _stream = EventChannel('bluetoothDataStream');
+const MethodChannel platform = MethodChannel('samples.flutter.dev/bluetooth');
+final StreamController<EEGData> streamController = StreamController.broadcast();
+
+T cast<T>(dynamic x) => x is T ? x : null;
 
 class PairingScreen extends StatefulWidget {
   const PairingScreen({Key key}) : super(key: key);
@@ -12,12 +21,29 @@ class PairingScreen extends StatefulWidget {
 }
 
 class _PairingScreenState extends State<PairingScreen> {
-  static const MethodChannel platform =
-      MethodChannel('samples.flutter.dev/bluetooth');
-
   List<String> _deviceList = <String>[];
 
   Future<void> _getDeviceList() async {
+    final start = DateTime.now();
+
+    _stream.receiveBroadcastStream().listen((dynamic data) {
+      final time = DateTime.now().difference(start);
+      final timeString = (time.inMinutes % 60).toString() +
+          ':' +
+          (time.inSeconds % 60).toString() +
+          ':' +
+          (time.inMilliseconds % 1000).toString();
+
+      final dataString = cast<String>(data);
+      final eegData = <double>[];
+
+      for (final s in dataString.split(',')) {
+        eegData.add(double.parse(s));
+      }
+
+      streamController.add(EEGData(timeString, eegData));
+    });
+
     var deviceList = <dynamic>[];
     try {
       deviceList = await platform.invokeMethod('getDeviceList');
@@ -26,7 +52,7 @@ class _PairingScreenState extends State<PairingScreen> {
     }
 
     setState(() {
-      _deviceList = (deviceList as List)?.map((dynamic item) => item as String)?.toList();
+      _deviceList = deviceList?.map((dynamic item) => item as String)?.toList();
     });
   }
 
@@ -34,14 +60,14 @@ class _PairingScreenState extends State<PairingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'SmartEEG',
         ),
       ),
-      body: Column(
+      body: ListView(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(15.0),
+          const Padding(
+            padding: EdgeInsets.all(15.0),
             child: Text(
               'Welcome',
               style: TextStyle(
@@ -50,8 +76,8 @@ class _PairingScreenState extends State<PairingScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(35, 100, 20, 8),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(35, 100, 20, 8),
             child: Center(
               child: Text(
                 'Please enter your device in pairing mode and connect using the button below.',
@@ -64,7 +90,7 @@ class _PairingScreenState extends State<PairingScreen> {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: RaisedButton(
-              child: Text('Connect to Device'),
+              child: const Text('Connect to Device'),
               color: Colors.green,
               onPressed: _getDeviceList,
             ),
