@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:csv/csv.dart';
 import 'pairing_screen.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:simple_permissions/simple_permissions.dart';
+// import 'package:simple_permissions/simple_permissions.dart';
 
 
 class SignalDataScreen extends StatefulWidget {
@@ -45,47 +45,66 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
     Colors.blueGrey,
   ];
 
-  Future<bool> saveToCsv(String filename, EEGData datarow) async {
+  Future<bool> saveToCsv(String filename, List<double> datarow) async {
 
-    bool checkResult = await SimplePermissions.checkPermission(Permission.WriteExternalStorage);
-    if (!checkResult) {
+    // List<EEGData> intermediate_list = [];
+    // intermediate_list.add(datarow);
 
-      var status = await SimplePermissions.requestPermission(Permission.WriteExternalStorage);
-      if (status == PermissionStatus.authorized) {
+    List<List<dynamic>> wrapper = [datarow];
+    String csv = const ListToCsvConverter().convert(wrapper);
 
-        List<EEGData> intermediate_list = [];
-        intermediate_list.add(datarow);
+    /// Write to a file
+    String directory_path = (await getExternalStorageDirectory()).absolute.path;
+    String pathOfTheFileToWrite = directory_path + filename;
+    File file = new File(pathOfTheFileToWrite);
+    file.writeAsString(csv);
 
-        List<List<dynamic>> wrapper = [intermediate_list];
-        String csv = const ListToCsvConverter().convert(wrapper);
+    // bool checkResult = await SimplePermissions.checkPermission(Permission.WriteExternalStorage);
+    // if (!checkResult) {
 
-        /// Write to a file
-        String directory_path = (await getExternalStorageDirectory()).absolute.path + "/StreamData/";
-        String pathOfTheFileToWrite = directory_path + filename;
-        File file = await File(pathOfTheFileToWrite);
-        file.writeAsString(csv);
-      }
-    } else {
+    //   var status = await SimplePermissions.requestPermission(Permission.WriteExternalStorage);
+    //   if (status == PermissionStatus.authorized) {
 
-      List<EEGData> intermediate_list = [];
-      intermediate_list.add(datarow);
+    //     List<EEGData> intermediate_list = [];
+    //     intermediate_list.add(datarow);
 
-      List<List<dynamic>> wrapper = [intermediate_list];
-      String csv = const ListToCsvConverter().convert(wrapper);
+    //     List<List<dynamic>> wrapper = [intermediate_list];
+    //     String csv = const ListToCsvConverter().convert(wrapper);
 
-      /// Write to a file
-      String directory_path = (await getExternalStorageDirectory()).absolute.path + "/StreamData/";
-      String pathOfTheFileToWrite = directory_path + filename;
-      File file = await File(pathOfTheFileToWrite);
-      file.writeAsString(csv);
-    }
+    //     /// Write to a file
+    //     String directory_path = (await getExternalStorageDirectory()).absolute.path + "/StreamData/";
+    //     String pathOfTheFileToWrite = directory_path + filename;
+    //     File file = await File(pathOfTheFileToWrite);
+    //     file.writeAsString(csv);
+    //   }
+    // } else {
+
+    //   List<EEGData> intermediate_list = [];
+    //   intermediate_list.add(datarow);
+
+    //   List<List<dynamic>> wrapper = [intermediate_list];
+    //   String csv = const ListToCsvConverter().convert(wrapper);
+
+    //   /// Write to a file
+    //   String directory_path = (await getExternalStorageDirectory()).absolute.path + "/StreamData/";
+    //   String pathOfTheFileToWrite = directory_path + filename;
+    //   File file = await File(pathOfTheFileToWrite);
+    //   file.writeAsString(csv);
+    // }
 
     return true;
   }
 
+  
+
   @override
   void initState() {
     super.initState();
+
+    print('-------------------------');
+    saveToCsv('data-1.csv', [1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0]);
+    print('-------------------------');
+
     streamController.stream.listen((data) {
       counter++;
       if (counter >= 9) {
@@ -94,7 +113,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
           if (_list.length > 100) {
             _list.removeAt(0);
           }
-          saveToCsv('data-1.csv', data);
+          // saveToCsv('data-1.csv', data);
         });
         counter = 0;
       }

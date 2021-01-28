@@ -1,3 +1,2 @@
 ninja: Entering directory `D:\Workspace\Android Projects\SmartEEG\eeglab\android\app\.cxx\cmake\debug\x86'
-[1/2] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o
-[2/2] Linking CXX shared library libnative-lib.so
+ninja: no work to do.
