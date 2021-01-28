@@ -1,10 +1,13 @@
 import 'dart:math';
-
+import 'dart:io';
 import 'package:eeglab/models/EEGData.dart';
 import 'package:eeglab/widgets/MyChart.dart';
 import 'package:flutter/material.dart';
-
+import 'package:csv/csv.dart';
 import 'pairing_screen.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:simple_permissions/simple_permissions.dart';
+
 
 class SignalDataScreen extends StatefulWidget {
   const SignalDataScreen({Key key}) : super(key: key);
@@ -42,6 +45,44 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
     Colors.blueGrey,
   ];
 
+  Future<bool> saveToCsv(String filename, EEGData datarow) async {
+
+    bool checkResult = await SimplePermissions.checkPermission(Permission.WriteExternalStorage);
+    if (!checkResult) {
+
+      var status = await SimplePermissions.requestPermission(Permission.WriteExternalStorage);
+      if (status == PermissionStatus.authorized) {
+
+        List<EEGData> intermediate_list = [];
+        intermediate_list.add(datarow);
+
+        List<List<dynamic>> wrapper = [intermediate_list];
+        String csv = const ListToCsvConverter().convert(wrapper);
+
+        /// Write to a file
+        String directory_path = (await getExternalStorageDirectory()).absolute.path + "/StreamData/";
+        String pathOfTheFileToWrite = directory_path + filename;
+        File file = await File(pathOfTheFileToWrite);
+        file.writeAsString(csv);
+      }
+    } else {
+
+      List<EEGData> intermediate_list = [];
+      intermediate_list.add(datarow);
+
+      List<List<dynamic>> wrapper = [intermediate_list];
+      String csv = const ListToCsvConverter().convert(wrapper);
+
+      /// Write to a file
+      String directory_path = (await getExternalStorageDirectory()).absolute.path + "/StreamData/";
+      String pathOfTheFileToWrite = directory_path + filename;
+      File file = await File(pathOfTheFileToWrite);
+      file.writeAsString(csv);
+    }
+
+    return true;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -53,6 +94,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
           if (_list.length > 100) {
             _list.removeAt(0);
           }
+          saveToCsv('data-1.csv', data);
         });
         counter = 0;
       }

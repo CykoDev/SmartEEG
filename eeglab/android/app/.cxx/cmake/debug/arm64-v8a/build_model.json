@@ -5,9 +5,9 @@
     "environmentVariables": []
   },
   "cmake": {
-    "cmakeArtifactsBaseFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
-    "cmakeServerLogFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a\\cmake_server_log.txt",
-    "cmakeWrappingBaseFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\debug\\arm64-v8a",
+    "cmakeArtifactsBaseFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
+    "cmakeServerLogFile": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a\\cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\debug\\arm64-v8a",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -15,13 +15,13 @@
       "inheritEnvironments": [
         "ndk"
       ],
-      "buildRoot": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
-      "cmakeToolchain": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
-      "cmakeExecutable": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+      "buildRoot": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
+      "cmakeToolchain": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
+      "cmakeExecutable": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
       "variables": [
         {
           "name": "CMAKE_FIND_ROOT_PATH",
-          "value": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab\\arm64-v8a\\prefab"
+          "value": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab\\arm64-v8a\\prefab"
         },
         {
           "name": "CMAKE_BUILD_TYPE",
@@ -29,7 +29,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake"
+          "value": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake"
         },
         {
           "name": "ANDROID_ABI",
@@ -37,7 +37,7 @@
         },
         {
           "name": "ANDROID_NDK",
-          "value": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061"
+          "value": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061"
         },
         {
           "name": "ANDROID_PLATFORM",
@@ -49,7 +49,7 @@
         },
         {
           "name": "CMAKE_ANDROID_NDK",
-          "value": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061"
+          "value": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061"
         },
         {
           "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
@@ -57,11 +57,11 @@
         },
         {
           "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
-          "value": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\debug\\obj\\arm64-v8a"
+          "value": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\debug\\obj\\arm64-v8a"
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
-          "value": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+          "value": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
         },
         {
           "name": "CMAKE_SYSTEM_NAME",
@@ -74,14 +74,14 @@
       ]
     }
   },
-  "cxxBuildFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
+  "cxxBuildFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
   "info": {
     "abi": "ARM64_V8A",
     "bitness": 64,
     "deprecated": false,
     "default": true
   },
-  "originalCxxBuildFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
+  "originalCxxBuildFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
   "variant": {
     "buildSystemArgumentList": [],
     "buildTargetSet": [],
@@ -95,24 +95,24 @@
     "module": {
       "buildSystem": "CMAKE",
       "cmake": {
-        "cmakeExe": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+        "cmakeExe": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
         "minimumCmakeVersion": "3.10.2",
-        "ninjaExe": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+        "ninjaExe": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
       },
-      "cmakeToolchainFile": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
-      "cxxFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx",
+      "cmakeToolchainFile": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
+      "cxxFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\.cxx",
       "gradleModulePathName": ":app",
-      "intermediatesFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\build\\app\\intermediates",
-      "makeFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\CMakeLists.txt",
-      "moduleBuildFile": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\build.gradle",
-      "moduleRootFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app",
+      "intermediatesFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\build\\app\\intermediates",
+      "makeFile": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\CMakeLists.txt",
+      "moduleBuildFile": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\build.gradle",
+      "moduleRootFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
         "X86",
         "X86_64"
       ],
-      "ndkFolder": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061",
+      "ndkFolder": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061",
       "ndkMetaAbiList": [
         {
           "abi": "ARMEABI_V7A",
@@ -170,29 +170,29 @@
       "ndkDefaultStl": "LIBCXX_STATIC",
       "ndkVersion": "22.0.7026061",
       "project": {
-        "compilerSettingsCacheFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\.cxx",
-        "cxxFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\.cxx",
+        "compilerSettingsCacheFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\.cxx",
+        "cxxFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\.cxx",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android",
-        "sdkFolder": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk",
+        "rootBuildGradleFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android",
+        "sdkFolder": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk",
         "isPrefabEnabled": false
       },
       "splitsAbiFilterSet": [],
       "stlSharedObjectMap": {
         "LIBCXX_SHARED": {
-          "ARMEABI_V7A": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
-          "ARM64_V8A": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
-          "X86": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
-          "X86_64": "C:\\Users\\skama\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+          "ARMEABI_V7A": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
         },
         "LIBCXX_STATIC": {},
         "NONE": {},
         "SYSTEM": {}
       }
     },
-    "objFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\debug\\obj",
+    "objFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\debug\\obj",
     "variantName": "debug",
     "validAbiList": [
       "ARMEABI_V7A",
@@ -200,8 +200,8 @@
       "X86",
       "X86_64"
     ],
-    "prefabDirectory": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab",
+    "prefabDirectory": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab",
     "prefabPackageDirectoryList": []
   },
-  "prefabFolder": "D:\\Dropbox\\GitHub\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab\\arm64-v8a"
+  "prefabFolder": "D:\\Workspace\\Android Projects\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab\\arm64-v8a"
 }
