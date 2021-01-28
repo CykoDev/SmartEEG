@@ -1,2 +1,2 @@
-ninja: Entering directory `D:\Dropbox\GitHub\SmartEEG\eeglab\android\app\.cxx\cmake\debug\armeabi-v7a'
+ninja: Entering directory `D:\Workspace\Android Projects\SmartEEG\eeglab\android\app\.cxx\cmake\debug\armeabi-v7a'
 ninja: no work to do.

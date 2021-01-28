@@ -1,20 +1,20 @@
-                Executable : C:\Users\skama\AppData\Local\Android\sdk\cmake\3.10.2.4988404\bin\cmake.exe
+                Executable : C:\Users\muham\AppData\Local\Android\sdk\cmake\3.10.2.4988404\bin\cmake.exe
 arguments : 
--HD:\Dropbox\GitHub\SmartEEG\eeglab\android\app
--DCMAKE_FIND_ROOT_PATH=D:\Dropbox\GitHub\SmartEEG\eeglab\android\app\.cxx\cmake\debug\prefab\x86\prefab
+-HD:\Workspace\Android Projects\SmartEEG\eeglab\android\app
+-DCMAKE_FIND_ROOT_PATH=D:\Workspace\Android Projects\SmartEEG\eeglab\android\app\.cxx\cmake\debug\prefab\x86\prefab
 -DCMAKE_BUILD_TYPE=Debug
--DCMAKE_TOOLCHAIN_FILE=C:\Users\skama\AppData\Local\Android\sdk\ndk\22.0.7026061\build\cmake\android.toolchain.cmake
+-DCMAKE_TOOLCHAIN_FILE=C:\Users\muham\AppData\Local\Android\sdk\ndk\22.0.7026061\build\cmake\android.toolchain.cmake
 -DANDROID_ABI=x86
--DANDROID_NDK=C:\Users\skama\AppData\Local\Android\sdk\ndk\22.0.7026061
+-DANDROID_NDK=C:\Users\muham\AppData\Local\Android\sdk\ndk\22.0.7026061
 -DANDROID_PLATFORM=android-16
 -DCMAKE_ANDROID_ARCH_ABI=x86
--DCMAKE_ANDROID_NDK=C:\Users\skama\AppData\Local\Android\sdk\ndk\22.0.7026061
+-DCMAKE_ANDROID_NDK=C:\Users\muham\AppData\Local\Android\sdk\ndk\22.0.7026061
 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\Dropbox\GitHub\SmartEEG\eeglab\build\app\intermediates\cmake\debug\obj\x86
--DCMAKE_MAKE_PROGRAM=C:\Users\skama\AppData\Local\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\Workspace\Android Projects\SmartEEG\eeglab\build\app\intermediates\cmake\debug\obj\x86
+-DCMAKE_MAKE_PROGRAM=C:\Users\muham\AppData\Local\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe
 -DCMAKE_SYSTEM_NAME=Android
 -DCMAKE_SYSTEM_VERSION=16
--BD:\Dropbox\GitHub\SmartEEG\eeglab\android\app\.cxx\cmake\debug\x86
+-BD:\Workspace\Android Projects\SmartEEG\eeglab\android\app\.cxx\cmake\debug\x86
 -GNinja
 jvmArgs : 
 
