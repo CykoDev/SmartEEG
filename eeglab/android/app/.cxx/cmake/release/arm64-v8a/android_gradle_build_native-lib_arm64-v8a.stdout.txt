@@ -1,0 +1,3 @@
+ninja: Entering directory `D:\Dropbox\GitHub\SmartEEG\eeglab\android\app\.cxx\cmake\release\arm64-v8a'
+[1/2] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o
+[2/2] Linking CXX shared library libnative-lib.so

@@ -45,6 +45,9 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
   @override
   void initState() {
     super.initState();
+
+    //read from csv
+
     streamController.stream.listen((data) {
       counter++;
       if (counter >= 9) {

@@ -1,0 +1,12 @@
+Follow these steps (assuming u have python 3+ 64-bit installed and are on Windows):
+
+Open terminal. (I've been using Visual Code cmd)
+Make sure you are in the CanvasInsight directory!
+
+create and activate virtual environment:
+    python -m venv venv
+    venv\Scripts\activate
+
+install stuff:
+    pip install flask
+    pip install -r requirements.txt

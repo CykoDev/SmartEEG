@@ -1,0 +1,7 @@
+Executable : C:\Users\skama\AppData\Local\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+D:\Dropbox\GitHub\SmartEEG\eeglab\android\app\.cxx\cmake\release\x86_64
+native-lib
+jvmArgs : 
+

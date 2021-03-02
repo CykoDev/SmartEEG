@@ -5,171 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1530c273-940a-4cc6-a988-0f6a78bcdc09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/SmartEEG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SmartEEG.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/debug/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/debug/arm64-v8a/build_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/android_gradle_build_mini.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.command.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stderr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stdout.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/build_command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/build_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/build_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/arm64-v8a/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/android_gradle_build_mini.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.command.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stderr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stdout.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/build_command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/build_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/build_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/armeabi-v7a/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/android_gradle_build_mini.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/android_gradle_generate_cmake_ninja_json_x86.command.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/android_gradle_generate_cmake_ninja_json_x86.stderr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/android_gradle_generate_cmake_ninja_json_x86.stdout.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/build_command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/build_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/build_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/android_gradle_build_mini.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.command.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stderr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stdout.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/build_command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/build_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/build_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/profile/x86_64/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/android_gradle_build_mini.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.command.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stderr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stdout.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/build_command.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/build_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/build_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/arm64-v8a/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_build_mini.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.command.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stderr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stdout.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/build_command.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/build_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/build_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/armeabi-v7a/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/android_gradle_build_mini.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/android_gradle_generate_cmake_ninja_json_x86.command.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/android_gradle_generate_cmake_ninja_json_x86.stderr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/android_gradle_generate_cmake_ninja_json_x86.stdout.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/build_command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/build_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/build_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/android_gradle_build_mini.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.command.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stderr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stdout.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/build_command.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/build_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/build_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/.cxx/cmake/release/x86_64/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/android/app/src/main/java/com/example/eeglab/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/android/app/src/main/java/com/example/eeglab/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eeglab/lib/screens/pairing_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/lib/screens/pairing_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eeglab/lib/screens/channel_data_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/lib/screens/channel_data_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eeglab/lib/screens/signal_data_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/lib/screens/signal_data_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eeglab/lib/widgets/MyChart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/eeglab/lib/widgets/MyChart.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,10 +59,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611652146562" />
-    <state x="1220" y="278" key="FileChooserDialogImpl" timestamp="1611652152409">
+    <state x="1220" y="278" key="FileChooserDialogImpl" timestamp="1612287068345">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1220" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1611652152409" />
+    <state x="1220" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612287068345" />
     <state x="922" y="168" key="SettingsEditor" timestamp="1604901517159">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

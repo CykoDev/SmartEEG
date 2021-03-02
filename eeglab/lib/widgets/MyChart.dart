@@ -70,8 +70,8 @@ class _MyChartState extends State<MyChart> {
           ),
         ],
       ),
-      onTap: () => Navigator.of(context)
-          .pushNamed(ChannelDataScreen.routeName, arguments: widget.channel),
+      // onTap: () => Navigator.of(context)
+      // .pushNamed(ChannelDataScreen.routeName, arguments: widget.channel),
     );
   }
 }

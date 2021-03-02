@@ -28,29 +28,29 @@ class _ChannelDataScreenState extends State<ChannelDataScreen> {
 
   DateTime start;
 
-  Future startStream() async {
-    streamOn = true;
-    start = DateTime.now();
-    while (streamOn) {
-      await Future<EEGData>.delayed(const Duration(milliseconds: 2));
-      final time = DateTime.now().difference(start);
-      final timeString = (time.inMinutes % 60).toString() +
-          ':' +
-          (time.inSeconds % 60).toString() +
-          ':' +
-          (time.inMilliseconds % 1000).toString();
-      streamController.add(EEGData(timeString, [
-        rand.nextDouble(),
-        rand.nextDouble(),
-        rand.nextDouble(),
-        rand.nextDouble(),
-        rand.nextDouble(),
-        rand.nextDouble(),
-        rand.nextDouble(),
-        rand.nextDouble()
-      ]));
-    }
-  }
+  // Future startStream() async {
+  //   streamOn = true;
+  //   start = DateTime.now();
+  //   while (streamOn) {
+  //     await Future<EEGData>.delayed(const Duration(milliseconds: 2));
+  //     final time = DateTime.now().difference(start);
+  //     final timeString = (time.inMinutes % 60).toString() +
+  //         ':' +
+  //         (time.inSeconds % 60).toString() +
+  //         ':' +
+  //         (time.inMilliseconds % 1000).toString();
+  //     streamController.add(EEGData(timeString, [
+  //       rand.nextDouble(),
+  //       rand.nextDouble(),
+  //       rand.nextDouble(),
+  //       rand.nextDouble(),
+  //       rand.nextDouble(),
+  //       rand.nextDouble(),
+  //       rand.nextDouble(),
+  //       rand.nextDouble()
+  //     ]));
+  //   }
+  // }
 
   @override
   void initState() {
@@ -67,7 +67,7 @@ class _ChannelDataScreenState extends State<ChannelDataScreen> {
         counter = 0;
       }
     });
-    startStream();
+    // startStream();
   }
 
   @override
