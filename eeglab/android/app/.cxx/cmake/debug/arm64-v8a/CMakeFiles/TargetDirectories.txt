@@ -1,3 +1,3 @@
-D:/Dropbox/GitHub/SmartEEG/eeglab/android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/native-lib.dir
-D:/Dropbox/GitHub/SmartEEG/eeglab/android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir
-D:/Dropbox/GitHub/SmartEEG/eeglab/android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/Workspace/Android Projects/SmartEEG/eeglab/android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/native-lib.dir
+D:/Workspace/Android Projects/SmartEEG/eeglab/android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/Workspace/Android Projects/SmartEEG/eeglab/android/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir
