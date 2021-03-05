@@ -1,0 +1,9 @@
+.idea/
+__pycache__/
+.vscode/
+*.pyc
+*.pyo
+.cache/
+.pytest_cache/
+build/
+config.py
