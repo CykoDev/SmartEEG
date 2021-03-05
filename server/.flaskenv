@@ -1,3 +1,0 @@
-DEBUG=True
-FLASK_ENV=development
-FLASK_APP=eeg_conversion.py
