@@ -5,6 +5,7 @@ import 'screens/heatmap_screen.dart';
 import 'screens/pairing_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/signal_data_screen.dart';
+import 'screens/home_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,8 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PairingScreen(),
+      home: HomeScreen(),
       routes: {
+        HomeScreen.routeName: (ctx) => HomeScreen(),
         HeatmapScreen.routeName: (ctx) => HeatmapScreen(),
         PairingScreen.routeName: (ctx) => PairingScreen(),
         SettingsScreen.routeName: (ctx) => SettingsScreen(),

@@ -1,3 +1,3 @@
 # ninja log v5
-1	111	636738794	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	4956fe6902ee4dec
-112	258	636738794	libnative-lib.so	43562ded5bd15b96
+0	58	637087606	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	4956fe6902ee4dec
+58	144	637087606	libnative-lib.so	43562ded5bd15b96
