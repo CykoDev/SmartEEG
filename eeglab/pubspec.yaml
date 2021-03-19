@@ -32,6 +32,7 @@ dependencies:
   csv: ^4.1.0
   path_provider: ^1.6.27
   http: ^0.13.0
+  # file_picker: ^3.0.0
   # simple_permissions: ^0.1.9
 
 dev_dependencies:

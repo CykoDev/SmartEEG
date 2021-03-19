@@ -8,7 +8,6 @@ import 'pairing_screen.dart';
 import 'package:path_provider/path_provider.dart';
 // import 'package:simple_permissions/simple_permissions.dart';
 
-
 class SignalDataScreen extends StatefulWidget {
   const SignalDataScreen({Key key}) : super(key: key);
   static String routeName = '/signal';
@@ -21,8 +20,11 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
   final rand = Random();
 
   bool streamOn = false;
+  bool streamPause = false;
+  File file;
 
   final List<EEGData> _list = [];
+  List<List<double>> csvData = [];
 
   int counter = 0;
 
@@ -45,18 +47,63 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
     Colors.blueGrey,
   ];
 
-  Future<bool> saveToCsv(String filename, List<double> datarow) async {
+  Future<void> createFile(String filename) async {
+    String directory_path = (await getExternalStorageDirectory()).absolute.path;
+    String pathOfTheFileToWrite = directory_path + '/' + filename;
+    file = new File(pathOfTheFileToWrite);
+    file.writeAsString('');
+    // return file;
+  }
 
-    List<List<dynamic>> wrapper = [datarow];
-    String csv = const ListToCsvConverter().convert(wrapper);
+  Future<void> saveToCsv(List<List<double>> datarow) async {
+    // List<List<double>> wrapper = [datarow];
+    String csv = const ListToCsvConverter().convert(datarow);
 
     /// Write to a file
-    String directory_path = (await getExternalStorageDirectory()).absolute.path;
-    String pathOfTheFileToWrite = directory_path + filename;
-    File file = new File(pathOfTheFileToWrite);
-    file.writeAsString(csv);
+    // String directory_path = (await getExternalStorageDirectory()).absolute.path;
+    // String pathOfTheFileToWrite = directory_path + '/' + filename;
+    // File file = new File(pathOfTheFileToWrite);
+    // if (streamOn) {
+    file.writeAsString(csv + '\n', mode: FileMode.append);
+    // } else {
+    // file.writeAsString(csv + '\n');
+    // streamOn = true;
+    // }
 
-    return true;
+    // return true;
+  }
+
+  void stopStream() {
+    setState(() {
+      streamOn = false;
+      streamPause = false;
+    });
+    if (csvData.length > 0) {
+      saveToCsv(List.from(csvData));
+      csvData = [];
+    }
+  }
+
+  void startStream() {
+    createFile('data-1.csv');
+    setState(() {
+      streamOn = true;
+    });
+    print("Stream On: " + streamOn.toString());
+  }
+
+  void pauseStream() {
+    setState(() {
+      streamOn = false;
+      streamPause = true;
+    });
+  }
+
+  void resumeStream() {
+    setState(() {
+      streamOn = true;
+      streamPause = false;
+    });
   }
 
   @override
@@ -73,13 +120,58 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
           if (_list.length > 100) {
             _list.removeAt(0);
           }
-          print(data.data);
+          List<double> reqData = data.data;
+
+          print(reqData);
           print('-------------------------');
-          saveToCsv('data-1.csv', data.data);
+          if (streamOn) {
+            csvData.add(reqData);
+            if (csvData.length == 100) {
+              saveToCsv(List.from(csvData));
+              csvData = [];
+            }
+          }
         });
         counter = 0;
       }
     });
+  }
+
+  List<Widget> getActions() {
+    List<Widget> actions = [];
+    if (streamOn) {
+      actions = [
+        IconButton(
+          icon: Icon(Icons.pause),
+          onPressed: () => pauseStream(),
+        ),
+        IconButton(
+          icon: Icon(Icons.stop),
+          onPressed: () => stopStream(),
+        ),
+      ];
+    } else {
+      if (streamPause) {
+        actions = [
+          IconButton(
+            icon: Icon(Icons.play_arrow_outlined),
+            onPressed: () => resumeStream(),
+          ),
+          IconButton(
+            icon: Icon(Icons.stop),
+            onPressed: () => stopStream(),
+          )
+        ];
+      } else {
+        actions = [
+          IconButton(
+            icon: Icon(Icons.play_arrow_rounded),
+            onPressed: () => startStream(),
+          ),
+        ];
+      }
+    }
+    return actions;
   }
 
   @override
@@ -97,6 +189,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
         title: const Text(
           'SmartEEG',
         ),
+        actions: getActions(),
       ),
       body: ListView(
         padding: const EdgeInsets.all(10.0),

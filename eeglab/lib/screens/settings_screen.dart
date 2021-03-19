@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
+import '../data/variables.dart';
 
 class SettingsScreen extends StatelessWidget {
   static String routeName = '/settings';
@@ -49,10 +50,10 @@ class SettingsScreen extends StatelessWidget {
                 onToggle: (bool value) {},
               ),
               SettingsTile(
-                title: 'Language',
-                subtitle: 'English',
+                title: 'CSV Files Storage Path',
+                subtitle: path,
                 leading: Icon(
-                  Icons.language,
+                  Icons.file_copy_outlined,
                 ),
                 onTap: () {},
               ),
