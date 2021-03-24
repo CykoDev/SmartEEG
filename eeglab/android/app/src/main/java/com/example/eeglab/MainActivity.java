@@ -31,18 +31,21 @@ public class MainActivity extends FlutterActivity {
     private static final int REQUEST_ENABLE_BT = 310;
 
     private MyBluetoothService bltService;
-    private MySensorService sensorService;
+//    private MySensorService sensorService;
     private EventChannel btStream;
     private EventChannel sensorStream;
+    private SensorManager mySensorManager;
 
     public static ArrayList<String> btDataStream;
-    public static ArrayList<String> sensorDataStream;
+    public static ArrayList<String> lightDataStream;
+    public static ArrayList<String> accDataStream;
 
     @Override
     public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
         super.configureFlutterEngine(flutterEngine);
         btDataStream = new ArrayList<>();
-        sensorDataStream = new ArrayList<>();
+        lightDataStream = new ArrayList<>();
+        accDataStream = new ArrayList<>();
         new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), BT_CHANNEL)
                 .setMethodCallHandler(
                         (call, result) -> {
@@ -64,12 +67,21 @@ public class MainActivity extends FlutterActivity {
         new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), SENSOR_CHANNEL)
                 .setMethodCallHandler((call, result) -> {
                     if (call.method.equals("initSensors")) {
-                        SensorManager mySensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+                        mySensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
                         boolean sensors = MySensorService.initSensors(mySensorManager);
                         if (sensors) {
-                            result.success("Sensors Functional");
+                            result.success("True");
                         } else {
                             result.error("UNAVAILABLE", "Couldn't connect to one or more sensors", null);
+                            // result.error(false);
+                        }
+                    }
+                    if (call.method.equals("destroySensors")) {
+                        boolean sensors = MySensorService.destroySensors(mySensorManager);
+                        if (sensors) {
+                            result.success("Sensors stopped listening");
+                        } else {
+                            result.error("FAILED", "Couldn't stop sensors from listening", null);
                         }
                     }
                 });
@@ -141,13 +153,27 @@ public class MainActivity extends FlutterActivity {
                 if (sensorListeners.containsKey(listener)) {
                     // Send some value to callback
                     String dataString;
+                    String lightString = "";
+                    String accString = "";
+                    boolean filled = true;
 //                    Log.d("ANAS", dataStream.toString());
-                    while(!btDataStream.isEmpty()) {
-                        dataString = btDataStream.remove(0);
+                    while(filled) {
+                        filled = false;
+                        if(!lightDataStream.isEmpty()) {
+                            lightString = lightDataStream.remove(0);
+                            filled = true;
+                        }
+                        if(!accDataStream.isEmpty()) {
+                            accString = accDataStream.remove(0);
+                            filled = true;
+                        }
+                        if(filled) {
+                            dataString = lightString + "|" + accString;
+                            emitter.success(dataString);
+                        }
 //                        Log.d("ANAS", dataString);
-                        emitter.success(dataString);
                     }
-                    handler.postDelayed((Runnable) this, 500);
+                    handler.postDelayed((Runnable) this, 50);
                 }
             }
         });

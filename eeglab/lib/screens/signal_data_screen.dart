@@ -1,12 +1,22 @@
+// import 'dart:html';
 import 'dart:math';
 import 'dart:io';
 import 'package:eeglab/models/EEGData.dart';
 import 'package:eeglab/widgets/MyChart.dart';
 import 'package:flutter/material.dart';
 import 'package:csv/csv.dart';
+import 'package:flutter/services.dart';
 import 'pairing_screen.dart';
-import 'package:path_provider/path_provider.dart';
+import '../data/variables.dart';
+// import 'package:path_provider/path_provider.dart';
 // import 'package:simple_permissions/simple_permissions.dart';
+
+const MethodChannel sensorPlatform =
+    MethodChannel("samples.flutter.dev/sensor");
+const EventChannel _sensorStream = EventChannel("sensorDataStream");
+
+typedef void Listener(dynamic data);
+typedef void CancelListening();
 
 class SignalDataScreen extends StatefulWidget {
   const SignalDataScreen({Key key}) : super(key: key);
@@ -19,9 +29,14 @@ class SignalDataScreen extends StatefulWidget {
 class _SignalDataScreenState extends State<SignalDataScreen> {
   final rand = Random();
 
+  CancelListening cancel;
+
   bool streamOn = false;
   bool streamPause = false;
-  File file;
+  bool newCSV = true;
+  bool listenStream = false;
+  String _textVal = '';
+  String fileName = '';
 
   final List<EEGData> _list = [];
   List<List<double>> csvData = [];
@@ -47,15 +62,16 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
     Colors.blueGrey,
   ];
 
-  Future<void> createFile(String filename) async {
-    String directory_path = (await getExternalStorageDirectory()).absolute.path;
-    String pathOfTheFileToWrite = directory_path + '/' + filename;
-    file = new File(pathOfTheFileToWrite);
-    file.writeAsString('');
-    // return file;
+  CancelListening startListening(Listener listener) {
+    var subscription = _sensorStream
+        .receiveBroadcastStream()
+        .listen(listener, cancelOnError: true);
+    return () {
+      subscription.cancel();
+    };
   }
 
-  Future<void> saveToCsv(List<List<double>> datarow) async {
+  Future<void> saveToCsv(List<List<double>> datarow, String filename) async {
     // List<List<double>> wrapper = [datarow];
     String csv = const ListToCsvConverter().convert(datarow);
 
@@ -63,33 +79,112 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
     // String directory_path = (await getExternalStorageDirectory()).absolute.path;
     // String pathOfTheFileToWrite = directory_path + '/' + filename;
     // File file = new File(pathOfTheFileToWrite);
-    // if (streamOn) {
-    file.writeAsString(csv + '\n', mode: FileMode.append);
-    // } else {
-    // file.writeAsString(csv + '\n');
-    // streamOn = true;
-    // }
+    String pathOfTheFileToWrite = path + '/' + filename;
+    File file = new File(pathOfTheFileToWrite);
+    if (newCSV) {
+      file.writeAsString(csv + '\n');
+      newCSV = false;
+    } else {
+      file.writeAsString(csv + '\n', mode: FileMode.append);
+      // streamOn = true;
+    }
 
     // return true;
+  }
+
+  Future<void> _showFileNameDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Filename'),
+            content: SizedBox(
+              height: 67,
+              child: Column(
+                children: [
+                  Text('Enter name of CSV file to save to:'),
+                  TextField(
+                    onChanged: (value) {
+                      setState(() {
+                        _textVal = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.pop(context);
+                  });
+                },
+                child: Text('Cancel'),
+              ),
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    if (_textVal != '') {
+                      fileName = _textVal + '.csv';
+                    }
+                    Navigator.pop(context);
+                  });
+                },
+                child: Text('OK'),
+              ),
+            ],
+          );
+        });
+  }
+
+  Future<void> getSensorData() async {
+    setState(() {
+      listenStream = true;
+    });
+    String recvMsg;
+    try {
+      recvMsg = await sensorPlatform.invokeMethod("initSensors");
+      if (recvMsg == "True") {
+        // _sensorStream.receiveBroadcastStream().listen((dynamic data) {
+        //   print(data);
+        // });
+        cancel = startListening((dynamic data) {
+          print(data);
+        });
+      }
+    } on PlatformException catch (e) {
+      print("Encountered an error: '${e.message}'");
+    }
+  }
+
+  void stopListening() {
+    cancel();
+    setState(() {
+      listenStream = false;
+    });
   }
 
   void stopStream() {
     setState(() {
       streamOn = false;
       streamPause = false;
+      newCSV = true;
     });
     if (csvData.length > 0) {
-      saveToCsv(List.from(csvData));
+      saveToCsv(List.from(csvData), fileName);
       csvData = [];
     }
   }
 
-  void startStream() {
-    createFile('data-1.csv');
-    setState(() {
-      streamOn = true;
-    });
-    print("Stream On: " + streamOn.toString());
+  void startStream(BuildContext context) async {
+    await _showFileNameDialog(context);
+    if (fileName != '') {
+      setState(() {
+        streamOn = true;
+      });
+      print("Stream On: " + streamOn.toString());
+    }
   }
 
   void pauseStream() {
@@ -101,6 +196,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
 
   void resumeStream() {
     setState(() {
+      // newCSV = false;
       streamOn = true;
       streamPause = false;
     });
@@ -127,7 +223,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
           if (streamOn) {
             csvData.add(reqData);
             if (csvData.length == 100) {
-              saveToCsv(List.from(csvData));
+              saveToCsv(List.from(csvData), fileName);
               csvData = [];
             }
           }
@@ -137,7 +233,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
     });
   }
 
-  List<Widget> getActions() {
+  List<Widget> getActions(BuildContext context) {
     List<Widget> actions = [];
     if (streamOn) {
       actions = [
@@ -166,10 +262,21 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
         actions = [
           IconButton(
             icon: Icon(Icons.play_arrow_rounded),
-            onPressed: () => startStream(),
+            onPressed: () => startStream(context),
           ),
         ];
       }
+    }
+    if (!listenStream) {
+      actions.add(IconButton(
+        icon: Icon(Icons.settings_input_antenna_sharp),
+        onPressed: () => getSensorData(),
+      ));
+    } else {
+      actions.add(IconButton(
+        icon: Icon(Icons.not_interested),
+        onPressed: () => stopListening(),
+      ));
     }
     return actions;
   }
@@ -189,7 +296,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
         title: const Text(
           'SmartEEG',
         ),
-        actions: getActions(),
+        actions: getActions(context),
       ),
       body: ListView(
         padding: const EdgeInsets.all(10.0),

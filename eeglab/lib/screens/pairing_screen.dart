@@ -6,8 +6,8 @@ import 'package:flutter/services.dart';
 
 import 'heatmap_screen.dart';
 
-const EventChannel _stream = EventChannel('bluetoothDataStream');
-const MethodChannel platform = MethodChannel('samples.flutter.dev/bluetooth');
+const EventChannel _btStream = EventChannel('bluetoothDataStream');
+const MethodChannel btPlatform = MethodChannel('samples.flutter.dev/bluetooth');
 final StreamController<EEGData> streamController = StreamController.broadcast();
 
 T cast<T>(dynamic x) => x is T ? x : null;
@@ -26,7 +26,7 @@ class _PairingScreenState extends State<PairingScreen> {
   Future<void> _getDeviceList() async {
     final start = DateTime.now();
 
-    _stream.receiveBroadcastStream().listen((dynamic data) {
+    _btStream.receiveBroadcastStream().listen((dynamic data) {
       final time = DateTime.now().difference(start);
       final timeString = (time.inMinutes % 60).toString() +
           ':' +
@@ -46,7 +46,7 @@ class _PairingScreenState extends State<PairingScreen> {
 
     var deviceList = <dynamic>[];
     try {
-      deviceList = await platform.invokeMethod('getDeviceList');
+      deviceList = await btPlatform.invokeMethod('getDeviceList');
     } on PlatformException catch (e) {
       deviceList.add("Failed to get device list: '${e.message}'.");
     }
@@ -89,14 +89,13 @@ class _PairingScreenState extends State<PairingScreen> {
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: RaisedButton(
+            child: ElevatedButton(
               child: const Text('Connect to Device'),
-              color: Colors.green,
               onPressed: _getDeviceList,
             ),
           ),
           for (String device in _deviceList)
-            RaisedButton(
+            ElevatedButton(
               child: Text(device),
               onPressed: () =>
                   Navigator.of(context).pushNamed(HeatmapScreen.routeName),
