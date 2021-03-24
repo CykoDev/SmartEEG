@@ -1,4 +1,5 @@
 from flask import Flask
+import os
 
 
 app = Flask(__name__)
@@ -11,8 +12,14 @@ elif app.config["ENV"] == "testing":
 else:
     app.config.from_object("config.DevelopmentConfig")
 
-print(f'ENV is set to: {app.config["ENV"]}')
 
+
+from config import basedir
+UPLOAD_DIRECTORY =  basedir + "\\uploads"
+if not os.path.exists(UPLOAD_DIRECTORY):
+    os.makedirs(UPLOAD_DIRECTORY)
+
+print(UPLOAD_DIRECTORY)
 
 # Sample HTTP error handling
 @app.errorhandler(404)
