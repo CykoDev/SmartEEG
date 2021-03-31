@@ -1,26 +1,18 @@
 package com.example.eeglab;
 
 import android.Manifest;
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,20 +25,28 @@ import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodChannel;
 
 public class MainActivity extends FlutterActivity {
-    private static final String CHANNEL = "samples.flutter.dev/bluetooth";
+    private static final String BT_CHANNEL = "samples.flutter.dev/bluetooth";
+    private static final String SENSOR_CHANNEL = "samples.flutter.dev/sensor";
     private static final int PERMISSION_CODE = 012;
     private static final int REQUEST_ENABLE_BT = 310;
 
     private MyBluetoothService bltService;
-    private EventChannel stream;
+//    private MySensorService sensorService;
+    private EventChannel btStream;
+    private EventChannel sensorStream;
+    private SensorManager mySensorManager;
 
-    public static ArrayList<String> dataStream;
+    public static ArrayList<String> btDataStream;
+    public static ArrayList<String> lightDataStream;
+    public static ArrayList<String> accDataStream;
 
     @Override
     public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
         super.configureFlutterEngine(flutterEngine);
-        dataStream = new ArrayList<>();
-        new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
+        btDataStream = new ArrayList<>();
+        lightDataStream = new ArrayList<>();
+        accDataStream = new ArrayList<>();
+        new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), BT_CHANNEL)
                 .setMethodCallHandler(
                         (call, result) -> {
                             // Note: this method is invoked on the main thread.
@@ -64,34 +64,69 @@ public class MainActivity extends FlutterActivity {
                         }
                 );
 
-        stream = new EventChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), "bluetoothDataStream");
-        stream.setStreamHandler(
+        new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), SENSOR_CHANNEL)
+                .setMethodCallHandler((call, result) -> {
+                    if (call.method.equals("initSensors")) {
+                        mySensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+                        boolean sensors = MySensorService.initSensors(mySensorManager);
+                        if (sensors) {
+                            result.success("True");
+                        } else {
+                            result.error("UNAVAILABLE", "Couldn't connect to one or more sensors", null);
+                            // result.error(false);
+                        }
+                    }
+                    if (call.method.equals("destroySensors")) {
+                        boolean sensors = MySensorService.destroySensors(mySensorManager);
+                        if (sensors) {
+                            result.success("Sensors stopped listening");
+                        } else {
+                            result.error("FAILED", "Couldn't stop sensors from listening", null);
+                        }
+                    }
+                });
+
+        btStream = new EventChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), "bluetoothDataStream");
+        btStream.setStreamHandler(
                         new EventChannel.StreamHandler() {
                             @Override
                             public void onListen(Object listener, EventChannel.EventSink eventSink) {
-                                startListening(listener, eventSink);
+                                startBtListening(listener, eventSink);
                             }
 
                             @Override
                             public void onCancel(Object listener) {
-                                cancelListening(listener);
+                                cancelBtListening(listener);
                             }
                         });
+
+        sensorStream = new EventChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), "sensorDataStream");
+        sensorStream.setStreamHandler(new EventChannel.StreamHandler() {
+            @Override
+            public void onListen(Object arguments, EventChannel.EventSink events) {
+                startSensorListening(arguments, events);
+            }
+
+            @Override
+            public void onCancel(Object arguments) {
+                cancelSensorListening(arguments);
+            }
+        });
     }
 
-    private Map<Object, Runnable> listeners = new HashMap<>();
+    private Map<Object, Runnable> btListeners = new HashMap<>();
 
-    void startListening(Object listener, EventChannel.EventSink emitter) {
+    void startBtListening(Object listener, EventChannel.EventSink emitter) {
         final Handler handler = new Handler();
-        listeners.put(listener, new Runnable() {
+        btListeners.put(listener, new Runnable() {
             @Override
             public void run() {
-                if (listeners.containsKey(listener)) {
+                if (btListeners.containsKey(listener)) {
                     // Send some value to callback
                     String dataString;
 //                    Log.d("ANAS", dataStream.toString());
-                    while(!dataStream.isEmpty()) {
-                        dataString = dataStream.remove(0);
+                    while(!btDataStream.isEmpty()) {
+                        dataString = btDataStream.remove(0);
 //                        Log.d("ANAS", dataString);
                         emitter.success(dataString);
                     }
@@ -100,12 +135,54 @@ public class MainActivity extends FlutterActivity {
             }
         });
         // Run task
-        handler.post(listeners.get(listener));
+        handler.post(btListeners.get(listener));
     }
 
-    void cancelListening(Object listener) {
+    void cancelBtListening(Object listener) {
         // Remove callback
-        listeners.remove(listener);
+        btListeners.remove(listener);
+    }
+
+    private Map<Object, Runnable> sensorListeners = new HashMap<>();
+
+    void startSensorListening(Object listener, EventChannel.EventSink emitter) {
+        final Handler handler = new Handler();
+        sensorListeners.put(listener, new Runnable() {
+            @Override
+            public void run() {
+                if (sensorListeners.containsKey(listener)) {
+                    // Send some value to callback
+                    String dataString;
+                    String lightString = "";
+                    String accString = "";
+                    boolean filled = true;
+//                    Log.d("ANAS", dataStream.toString());
+                    while(filled) {
+                        filled = false;
+                        if(!lightDataStream.isEmpty()) {
+                            lightString = lightDataStream.remove(0);
+                            filled = true;
+                        }
+                        if(!accDataStream.isEmpty()) {
+                            accString = accDataStream.remove(0);
+                            filled = true;
+                        }
+                        if(filled) {
+                            dataString = lightString + "|" + accString;
+                            emitter.success(dataString);
+                        }
+//                        Log.d("ANAS", dataString);
+                    }
+                    handler.postDelayed((Runnable) this, 50);
+                }
+            }
+        });
+        // Run task
+        handler.post(sensorListeners.get(listener));
+    }
+
+    void cancelSensorListening(Object listener) {
+        sensorListeners.remove(listener);
     }
 
     private List<String> getDeviceList() {

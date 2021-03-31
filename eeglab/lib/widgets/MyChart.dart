@@ -10,8 +10,8 @@ class MyChart extends StatefulWidget {
       this.channelName,
       this.color,
       this.dyn = true,
-      this.min = 0,
-      this.max = 1,
+      this.min = -2000,
+      this.max = 2000,
       Key key})
       : super(key: key);
 

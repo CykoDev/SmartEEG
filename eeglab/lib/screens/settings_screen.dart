@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
+import '../data/variables.dart';
+import 'package:file_picker/file_picker.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   static String routeName = '/settings';
+
+  @override
+  _SettingsScreenState createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  
+  void pickPath() async {
+    String result = await FilePicker.platform.getDirectoryPath();
+    setState(() {
+      path = result;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,52 +34,17 @@ class SettingsScreen extends StatelessWidget {
         ),
         // backgroundColor: Colors.white,
       ),
-      body: SettingsList(
-        sections: [
-          SettingsSection(
-            // title: 'Section',
-            tiles: [
-              SettingsTile.switchTile(
-                title: 'Impedance',
-                leading: Icon(
-                  Icons.fingerprint,
-                ),
-                switchValue: true,
-                onToggle: (bool value) {},
-              ),
-              SettingsTile.switchTile(
-                title: 'Use fingerprint',
-                leading: Icon(
-                  Icons.fingerprint,
-                ),
-                switchValue: true,
-                onToggle: (bool value) {},
-              ),
-              SettingsTile.switchTile(
-                title: 'Use fingerprint',
-                leading: Icon(
-                  Icons.fingerprint,
-                ),
-                switchValue: true,
-                onToggle: (bool value) {},
-              ),
-              SettingsTile(
-                title: 'Language',
-                subtitle: 'English',
-                leading: Icon(
-                  Icons.language,
-                ),
-                onTap: () {},
-              ),
-              SettingsTile(
-                title: 'Language',
-                subtitle: 'English',
-                leading: Icon(
-                  Icons.language,
-                ),
-                onTap: () {},
-              ),
-            ],
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Icon(
+              Icons.file_copy_outlined,
+              size: 30,
+            ),
+            title: Text("CSV Files Storage Path"),
+            subtitle: Text(path),
+            trailing: Icon(Icons.chevron_right),
+            onTap: () => pickPath(),
           ),
         ],
       ),

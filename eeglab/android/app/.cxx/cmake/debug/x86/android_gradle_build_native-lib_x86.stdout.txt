@@ -1,2 +1,2 @@
-ninja: Entering directory `D:\Workspace\Android Projects\SmartEEG\eeglab\android\app\.cxx\cmake\debug\x86'
+ninja: Entering directory `C:\Users\anast\Documents\Development\Flutter\SmartEEG\eeglab\android\app\.cxx\cmake\debug\x86'
 ninja: no work to do.

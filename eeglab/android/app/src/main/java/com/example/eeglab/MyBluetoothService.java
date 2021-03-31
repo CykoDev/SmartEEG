@@ -62,7 +62,7 @@ public class MyBluetoothService {
                     case MESSAGE_READ:
                         String arduinoMsg = msg.obj.toString(); // Read message from Arduino
 //                        Log.d("ANAS", "Arduino message: " + arduinoMsg);
-                        MainActivity.dataStream.add(arduinoMsg);
+                        MainActivity.btDataStream.add(arduinoMsg);
                         break;
                 }
             }
