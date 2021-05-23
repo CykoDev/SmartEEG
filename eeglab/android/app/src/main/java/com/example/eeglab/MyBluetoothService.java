@@ -69,6 +69,13 @@ public class MyBluetoothService {
         };
     }
 
+    public boolean sendSignal(String signal){
+        if(connectedThread != null){
+            return write(signal);
+        }
+        return false;
+    }
+
     /* ============================ Thread to Create Bluetooth Connection =================================== */
     public static class CreateConnectThread extends Thread {
 
@@ -187,12 +194,14 @@ public class MyBluetoothService {
         }
 
         /* Call this from the main activity to send data to the remote device */
-        public void write(String input) {
+        public boolean write(String input) {
             byte[] bytes = input.getBytes(); //converts entered String into bytes
             try {
                 mmOutStream.write(bytes);
+                return true;
             } catch (IOException e) {
                 Log.e("Send Error", "Unable to send message", e);
+                return false;
             }
         }
 
