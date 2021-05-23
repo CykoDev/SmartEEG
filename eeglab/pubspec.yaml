@@ -30,8 +30,9 @@ dependencies:
   settings_ui: ^0.4.0
   syncfusion_flutter_charts: ^18.4.34
   csv: ^4.1.0
-  path_provider: ^1.6.27
+  # path_provider: ^1.6.27
   http: ^0.13.0
+  file_picker: ^3.0.0
   # simple_permissions: ^0.1.9
 
 dev_dependencies:

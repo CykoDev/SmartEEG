@@ -15,8 +15,9 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
   String _outputString = 'File Format';
 
   void fetchCSV() async {
-    final response = await http.get(
-      Uri.https('smart-eeg.herokuapp.com', 'conversion/test'),
+    final response = await http.post(
+      Uri.https('smart-eeg.herokuapp.com', 'conversion/edftocsv2'),
+      body: "testString",
     );
 
     int code = response.statusCode;
@@ -34,6 +35,9 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
     //         label: 'OK', onPressed: scaffold.hideCurrentSnackBar),
     //   ),
     // );
+    setState(() {
+      _outputString = "Fetching data...";
+    });
     await fetchCSV();
     setState(() {
       _outputString = _outputString;

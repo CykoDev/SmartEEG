@@ -6,6 +6,8 @@ import 'screens/pairing_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/signal_data_screen.dart';
 import 'screens/home_screen.dart';
+import 'screens/csv_file_screen.dart';
+import 'screens/eeg_file_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,6 +22,8 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       routes: {
         HomeScreen.routeName: (ctx) => HomeScreen(),
+        CSVFileScreen.routeName: (ctx) => CSVFileScreen(),
+        EEGFileScreen.routeName: (ctx) => EEGFileScreen(),
         HeatmapScreen.routeName: (ctx) => HeatmapScreen(),
         PairingScreen.routeName: (ctx) => PairingScreen(),
         SettingsScreen.routeName: (ctx) => SettingsScreen(),

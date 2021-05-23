@@ -1,9 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
+import 'dart:io';
 
 import 'pairing_screen.dart';
+import 'csv_file_screen.dart';
+import '../data/variables.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = '/home';
+
+  void pickFile(BuildContext context) async {
+    FilePickerResult result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: [
+        'csv',
+        'edf',
+        'bdf',
+        'xdf',
+      ],
+    );
+    if (result != null) {
+      openedFile = File(result.files.single.path);
+      Navigator.of(context).pushNamed(CSVFileScreen.routeName);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,8 +106,7 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    onPressed: () => Navigator.of(context)
-                        .pushNamed(PairingScreen.routeName),
+                    onPressed: () => pickFile(context),
                   ),
                 ),
               ),
