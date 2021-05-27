@@ -58,6 +58,14 @@ public class MainActivity extends FlutterActivity {
                                 } else {
                                     result.error("UNAVAILABLE", "No devices available.", null);
                                 }
+                            } else if(call.method.equals("sendSignal")){
+                                String signal = "a";
+
+                                if (sendSignal(signal)) {
+                                    result.success("Signal Sent");
+                                } else {
+                                    result.error("FAILURE", "Signal failed to send", null);
+                                }
                             } else {
                                 result.notImplemented();
                             }
@@ -183,6 +191,11 @@ public class MainActivity extends FlutterActivity {
 
     void cancelSensorListening(Object listener) {
         sensorListeners.remove(listener);
+    }
+
+    private boolean sendSignal(String signal){
+        if(bltService != null) return bltService.sendSignal(signal);
+        return false;
     }
 
     private List<String> getDeviceList() {

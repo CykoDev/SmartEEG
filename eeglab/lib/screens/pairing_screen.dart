@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'heatmap_screen.dart';
+import '../data/variables.dart';
 
 const EventChannel _btStream = EventChannel('bluetoothDataStream');
 const MethodChannel btPlatform = MethodChannel('samples.flutter.dev/bluetooth');
@@ -25,6 +26,7 @@ class _PairingScreenState extends State<PairingScreen> {
 
   Future<void> _getDeviceList() async {
     final start = DateTime.now();
+    var last = DateTime.now();
 
     _btStream.receiveBroadcastStream().listen((dynamic data) {
       final time = DateTime.now().difference(start);
@@ -40,6 +42,22 @@ class _PairingScreenState extends State<PairingScreen> {
       for (final s in dataString.split(',')) {
         eegData.add(double.parse(s));
       }
+
+      final sum = eegData.sublist(0, -1).reduce((a, b) => a + b);
+      if (sum != eegData[eegData.length - 1]) {
+        return;
+      }
+
+      final timeSinceLast = DateTime.now().difference(last);
+      if (timeSinceLast.inMilliseconds < 2 && highFreq) {
+        return;
+      }
+
+      if (timeSinceLast.inMilliseconds < 4 && !highFreq) {
+        return;
+      }
+
+      last = DateTime.now();
 
       streamController.add(EEGData(timeString, eegData));
     });
