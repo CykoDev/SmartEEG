@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screens/channel_data_screen.dart';
-import 'screens/heatmap_screen.dart';
+import 'screens/electrodes_screen.dart';
 import 'screens/pairing_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/signal_data_screen.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (ctx) => HomeScreen(),
         CSVFileScreen.routeName: (ctx) => CSVFileScreen(),
         EEGFileScreen.routeName: (ctx) => EEGFileScreen(),
-        HeatmapScreen.routeName: (ctx) => HeatmapScreen(),
+        ElectrodesScreen.routeName: (ctx) => ElectrodesScreen(),
         PairingScreen.routeName: (ctx) => PairingScreen(),
         SettingsScreen.routeName: (ctx) => SettingsScreen(),
         SignalDataScreen.routeName: (ctx) => SignalDataScreen(),

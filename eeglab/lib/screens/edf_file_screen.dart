@@ -1,17 +1,13 @@
+import 'package:eeglab/data/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import 'settings_screen.dart';
-import 'signal_data_screen.dart';
-
-class HeatmapScreen extends StatefulWidget {
-  static String routeName = '/heatmap';
-
+class EDFFileScreen extends StatefulWidget {
   @override
-  _HeatmapScreenState createState() => _HeatmapScreenState();
+  _EDFFileScreenState createState() => _EDFFileScreenState();
 }
 
-class _HeatmapScreenState extends State<HeatmapScreen> {
+class _EDFFileScreenState extends State<EDFFileScreen> {
   String _outputString = 'File Format';
 
   void fetchCSV() async {
@@ -55,40 +51,12 @@ class _HeatmapScreenState extends State<HeatmapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(),
-        title: Text(
-          'SmartEEG',
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.settings,
-            ),
-            onPressed: () =>
-                Navigator.of(context).pushNamed(SettingsScreen.routeName),
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.show_chart,
-            ),
-            onPressed: () =>
-                Navigator.of(context).pushNamed(SignalDataScreen.routeName),
-          ),
-        ],
+        title: Text("File: " + openedFileName),
       ),
-      body: Column(
-        children: [
-          Text(
-            _outputString,
-            style: TextStyle(
-              fontSize: 30,
-            ),
-          ),
-          RaisedButton(
-            child: Text('Get Data'),
-            onPressed: changeState,
-          ),
-        ],
+      body: Center(
+        child: Container(
+          child: Text(openedFile.path),
+        ),
       ),
     );
   }
