@@ -1,19 +1,19 @@
 {
   "buildFiles": [
-    "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\CMakeLists.txt",
-    "C:\\Users\\anast\\AppData\\Local\\Android\\Sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
-    "C:\\Users\\anast\\AppData\\Local\\Android\\Sdk\\ndk\\22.0.7026061\\build\\cmake\\platforms.cmake"
+    "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\CMakeLists.txt",
+    "C:\\Users\\muham\\AppData\\Local\\Android\\Sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\muham\\AppData\\Local\\Android\\Sdk\\ndk\\22.0.7026061\\build\\cmake\\platforms.cmake"
   ],
   "cleanCommands": [
-    "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" clean"
+    "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" clean"
   ],
-  "buildTargetsCommand": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "native-lib-Debug-armeabi-v7a": {
       "artifactName": "native-lib",
-      "buildCommand": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" native-lib",
+      "buildCommand": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" native-lib",
       "abi": "armeabi-v7a",
-      "output": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\\libnative-lib.so",
+      "output": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\\libnative-lib.so",
       "runtimeFiles": []
     }
   }
