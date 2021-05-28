@@ -1,6 +1,8 @@
 // import 'dart:html';
+// import 'dart:html';
 import 'dart:math';
 import 'dart:io';
+import 'package:wakelock/wakelock.dart';
 import 'package:eeglab/models/EEGData.dart';
 import 'package:eeglab/widgets/MyChart.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +11,8 @@ import 'package:flutter/services.dart';
 import 'pairing_screen.dart';
 import '../data/variables.dart';
 // import 'package:path_provider/path_provider.dart';
-// import 'package:simple_permissions/simple_permissions.dart';
+import 'package:simple_permissions/simple_permissions.dart';
+// import 'package:permission_handler/permission_handler.dart';
 
 const MethodChannel sensorPlatform =
     MethodChannel("samples.flutter.dev/sensor");
@@ -37,6 +40,8 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
   bool listenStream = false;
   String _textVal = '';
   String fileName = '';
+  double height = 75;
+  double lastHeight = 90;
 
   final List<EEGData> _list = [];
   List<List<double>> csvData = [];
@@ -66,12 +71,23 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
   Future<void> saveToCsv(List<List<double>> datarow, String filename) async {
     // List<List<double>> wrapper = [datarow];
     String csv = const ListToCsvConverter().convert(datarow);
+    // print("||||||||||||||||||||||Entered saveCSV method!||||||||||||||||||||||||||||||||||");
+    // File file;
 
     /// Write to a file
     // String directory_path = (await getExternalStorageDirectory()).absolute.path;
+    // print(directory_path);
+    // final dir = Directory(directory_path + '/csvFiles');
+    // await dir.create().then((value) {
+    //   file = File('${value.path}/${filename}');
+    // });
     // String pathOfTheFileToWrite = directory_path + '/' + filename;
+    // print(pathOfTheFileToWrite);
     // File file = new File(pathOfTheFileToWrite);
+    // String pathOfTheFileToWrite = '/storage/emulated/0/Android/data/com.example.eeglab/files/' + filename;
+    // String pathOfTheFileToWrite = '/storage/emulated/0/Csvdata/' + filename;
     String pathOfTheFileToWrite = path + '/' + filename;
+    print(pathOfTheFileToWrite);
     File file = new File(pathOfTheFileToWrite);
     if (newCSV) {
       file.writeAsString(csv + '\n');
@@ -118,6 +134,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
                 onPressed: () {
                   setState(() {
                     if (_textVal != '') {
+                      print("TextVal had this value: " + _textVal);
                       fileName = _textVal + '.csv';
                     }
                     Navigator.pop(context);
@@ -158,18 +175,26 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
   }
 
   void stopStream() {
+    print("stopping stream");
+    csvData = [[1.0,2.0],[3.0,4.0]];
+    if (csvData.length > 0) {
+      saveToCsv(List.from(csvData), fileName);
+      csvData = [];
+    }
     setState(() {
       streamOn = false;
       streamPause = false;
       newCSV = true;
     });
-    if (csvData.length > 0) {
-      saveToCsv(List.from(csvData), fileName);
-      csvData = [];
-    }
   }
 
   void startStream(BuildContext context) async {
+    // dynamic status = await Permission.storage.request();
+    dynamic status = await SimplePermissions.requestPermission(Permission.WriteExternalStorage);
+
+    
+    print("|||||||||||||||||||Status below!|||||||||||||||||||");
+    print(status);
     await _showFileNameDialog(context);
     if (fileName != '') {
       setState(() {
@@ -197,6 +222,8 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
   @override
   void initState() {
     super.initState();
+
+    Wakelock.enable();
 
     //read from csv
 
@@ -294,42 +321,42 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
         padding: const EdgeInsets.all(10.0),
         children: [
           Container(
-            height: 50,
+            height: height,
             child: MyChart(_list,
                 channel: 0, channelName: '1', color: colors[0], dyn: dyn, min: min, max: max),
           ),
           Container(
-            height: 50,
+            height: height,
             child:
                 MyChart(_list, channel: 1, channelName: '2', color: colors[1], dyn: dyn, min: min, max: max),
           ),
           Container(
-            height: 50,
+            height: height,
             child:
                 MyChart(_list, channel: 2, channelName: '3', color: colors[2], dyn: dyn, min: min, max: max),
           ),
           Container(
-            height: 50,
+            height: height,
             child:
                 MyChart(_list, channel: 3, channelName: '4', color: colors[3], dyn: dyn, min: min, max: max),
           ),
           Container(
-            height: 50,
+            height: height,
             child:
                 MyChart(_list, channel: 4, channelName: '5', color: colors[4], dyn: dyn, min: min, max: max),
           ),
           Container(
-            height: 50,
+            height: height,
             child:
                 MyChart(_list, channel: 5, channelName: '6', color: colors[5], dyn: dyn, min: min, max: max),
           ),
           Container(
-            height: 50,
+            height: height,
             child:
                 MyChart(_list, channel: 6, channelName: '7', color: colors[6], dyn: dyn, min: min, max: max),
           ),
           Container(
-            height: 60,
+            height: lastHeight,
             child:
                 MyChart(_list, channel: 7, channelName: '8', color: colors[7], xAxis: true, dyn: dyn, min: min, max: max),
           ),

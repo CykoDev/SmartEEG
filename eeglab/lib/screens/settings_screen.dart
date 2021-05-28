@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
-import '../data/variables.dart';
 import 'package:file_picker/file_picker.dart';
-
+import '../data/variables.dart';
 class SettingsScreen extends StatefulWidget {
   static String routeName = '/settings';
 
