@@ -71,7 +71,7 @@ public class MyBluetoothService {
 
     public boolean sendSignal(String signal){
         if(connectedThread != null){
-            return write(signal);
+            return connectedThread.write(signal);
         }
         return false;
     }

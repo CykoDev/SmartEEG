@@ -14,13 +14,15 @@ class HomeScreen extends StatelessWidget {
       type: FileType.custom,
       allowedExtensions: [
         'csv',
-        'edf',
-        'bdf',
-        'xdf',
+        // 'edf',
+        // 'bdf',
+        // 'xdf',
       ],
     );
     if (result != null) {
-      openedFile = File(result.files.single.path);
+      PlatformFile file = result.files.single;
+      openedFile = File(file.path);
+      openedFileName = file.name;
       Navigator.of(context).pushNamed(CSVFileScreen.routeName);
     }
   }

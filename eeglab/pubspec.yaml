@@ -33,7 +33,13 @@ dependencies:
   # path_provider: ^1.6.27
   http: ^0.13.0
   file_picker: ^3.0.0
+  wakelock: ^0.5.0+2
+  # filesystem_picker: ^1.0.4
   # simple_permissions: ^0.1.9
+  # permission_handler: ^7.1.0
+  simple_permissions:
+    git:
+      url: https://github.com/tq-systems/simple_permissions.git
 
 dev_dependencies:
   flutter_test:
