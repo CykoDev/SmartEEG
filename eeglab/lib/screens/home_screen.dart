@@ -6,9 +6,42 @@ import 'pairing_screen.dart';
 import 'csv_file_screen.dart';
 import 'edf_file_screen.dart';
 import '../data/variables.dart';
+import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatelessWidget {
   static String routeName = '/home';
+  String _outputString = 'File Format';
+
+  void edf2csv() async {
+
+    
+    final response = await http.post(
+      Uri.https('smart-eeg.herokuapp.com', 'conversion/edftocsv2'),
+      body: "testString",
+     
+    );
+
+    // openedFileName
+
+    int code = response.statusCode;
+    print(code);
+
+    _outputString = response.body;
+  }
+
+  void bdf2csv() async {
+    final response = await http.post(
+      Uri.https('smart-eeg.herokuapp.com', 'conversion/bdftocsv2'),
+      body: "testString",
+    );
+
+    int code = response.statusCode;
+    print(code);
+
+    _outputString = response.body;
+  }
+
+  
 
   void pickFile(BuildContext context) async {
     FilePickerResult result = await FilePicker.platform.pickFiles(
@@ -26,7 +59,11 @@ class HomeScreen extends StatelessWidget {
       openedFileName = file.name;
       if (file.extension == 'csv') {
         Navigator.of(context).pushNamed(CSVFileScreen.routeName);
-      } else {
+      } 
+      else if (file.extension == 'edf') {
+        
+      }
+      else if (file.extension == 'bdf') {
         
       }
     }
