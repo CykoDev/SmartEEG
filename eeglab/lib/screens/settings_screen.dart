@@ -17,6 +17,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     String result = await FilePicker.platform.getDirectoryPath();
     setState(() {
       path = result;
+      pathChosen = true;
     });
   }
 

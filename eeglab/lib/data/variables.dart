@@ -1,6 +1,7 @@
 import 'dart:io';
 
 String path = 'Tap to choose path...';
+bool pathChosen = false;
 File openedFile;
 String openedFileName;
 bool dyn = true;

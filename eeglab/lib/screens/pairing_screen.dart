@@ -4,7 +4,7 @@ import 'package:eeglab/models/EEGData.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'heatmap_screen.dart';
+import 'electrodes_screen.dart';
 import '../data/variables.dart';
 
 const EventChannel _btStream = EventChannel('bluetoothDataStream');
@@ -116,7 +116,7 @@ class _PairingScreenState extends State<PairingScreen> {
             ElevatedButton(
               child: Text(device),
               onPressed: () =>
-                  Navigator.of(context).pushNamed(HeatmapScreen.routeName),
+                  Navigator.of(context).pushNamed(ElectrodesScreen.routeName),
             ),
         ],
       ),

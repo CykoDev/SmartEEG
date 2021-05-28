@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'pairing_screen.dart';
 import 'csv_file_screen.dart';
+import 'edf_file_screen.dart';
 import '../data/variables.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       type: FileType.custom,
       allowedExtensions: [
         'csv',
-        // 'edf',
+        'edf',
         // 'bdf',
         // 'xdf',
       ],
@@ -23,7 +24,11 @@ class HomeScreen extends StatelessWidget {
       PlatformFile file = result.files.single;
       openedFile = File(file.path);
       openedFileName = file.name;
-      Navigator.of(context).pushNamed(CSVFileScreen.routeName);
+      if (file.extension == 'csv') {
+        Navigator.of(context).pushNamed(CSVFileScreen.routeName);
+      } else {
+        
+      }
     }
   }
 

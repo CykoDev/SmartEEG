@@ -10,6 +10,8 @@ import 'package:csv/csv.dart';
 import 'package:flutter/services.dart';
 import 'pairing_screen.dart';
 import '../data/variables.dart';
+import 'package:file_picker/file_picker.dart';
+
 // import 'package:path_provider/path_provider.dart';
 import 'package:simple_permissions/simple_permissions.dart';
 // import 'package:permission_handler/permission_handler.dart';
@@ -107,7 +109,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
           return AlertDialog(
             title: Text('Filename'),
             content: SizedBox(
-              height: 67,
+              height: 69,
               child: Column(
                 children: [
                   Text('Enter name of CSV file to save to:'),
@@ -132,12 +134,30 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
               ),
               TextButton(
                 onPressed: () {
-                  setState(() {
-                    if (_textVal != '') {
+                  setState(() async {
+                    if (_textVal == '') {
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text('Enter a file name'),
+                      ));
+                    } else {
                       print("TextVal had this value: " + _textVal);
-                      fileName = _textVal + '.csv';
+                      String filename = _textVal + '.csv';
+                      String filepath = path + '/' + filename;
+                      if (await File(filepath).exists()) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text('The file aleady exists. Overwrite?'),
+                          action: SnackBarAction(
+                              label: "YES",
+                              onPressed: () {
+                                fileName = filename;
+                                Navigator.pop(context);
+                              }),
+                        ));
+                      } else {
+                        fileName = filename;
+                        Navigator.pop(context);
+                      }
                     }
-                    Navigator.pop(context);
                   });
                 },
                 child: Text('OK'),
@@ -159,7 +179,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
         //   print(data);
         // });
         cancel = startListening((dynamic data) {
-          print(data);
+          // print(data);
         });
       }
     } on PlatformException catch (e) {
@@ -176,7 +196,10 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
 
   void stopStream() {
     print("stopping stream");
-    csvData = [[1.0,2.0],[3.0,4.0]];
+    csvData = [
+      [1.0, 2.0],
+      [3.0, 4.0]
+    ];
     if (csvData.length > 0) {
       saveToCsv(List.from(csvData), fileName);
       csvData = [];
@@ -190,11 +213,18 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
 
   void startStream(BuildContext context) async {
     // dynamic status = await Permission.storage.request();
-    dynamic status = await SimplePermissions.requestPermission(Permission.WriteExternalStorage);
+    dynamic status = await SimplePermissions.requestPermission(
+        Permission.WriteExternalStorage);
 
-    
     print("|||||||||||||||||||Status below!|||||||||||||||||||");
     print(status);
+    if (!pathChosen) {
+      String result = await FilePicker.platform.getDirectoryPath();
+      setState(() {
+        path = result;
+        pathChosen = true;
+      });
+    }
     await _showFileNameDialog(context);
     if (fileName != '') {
       setState(() {
@@ -323,42 +353,83 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
           Container(
             height: height,
             child: MyChart(_list,
-                channel: 0, channelName: '1', color: colors[0], dyn: dyn, min: min, max: max),
+                channel: 0,
+                channelName: '1',
+                color: colors[0],
+                dyn: dyn,
+                min: min,
+                max: max),
           ),
           Container(
             height: height,
-            child:
-                MyChart(_list, channel: 1, channelName: '2', color: colors[1], dyn: dyn, min: min, max: max),
+            child: MyChart(_list,
+                channel: 1,
+                channelName: '2',
+                color: colors[1],
+                dyn: dyn,
+                min: min,
+                max: max),
           ),
           Container(
             height: height,
-            child:
-                MyChart(_list, channel: 2, channelName: '3', color: colors[2], dyn: dyn, min: min, max: max),
+            child: MyChart(_list,
+                channel: 2,
+                channelName: '3',
+                color: colors[2],
+                dyn: dyn,
+                min: min,
+                max: max),
           ),
           Container(
             height: height,
-            child:
-                MyChart(_list, channel: 3, channelName: '4', color: colors[3], dyn: dyn, min: min, max: max),
+            child: MyChart(_list,
+                channel: 3,
+                channelName: '4',
+                color: colors[3],
+                dyn: dyn,
+                min: min,
+                max: max),
           ),
           Container(
             height: height,
-            child:
-                MyChart(_list, channel: 4, channelName: '5', color: colors[4], dyn: dyn, min: min, max: max),
+            child: MyChart(_list,
+                channel: 4,
+                channelName: '5',
+                color: colors[4],
+                dyn: dyn,
+                min: min,
+                max: max),
           ),
           Container(
             height: height,
-            child:
-                MyChart(_list, channel: 5, channelName: '6', color: colors[5], dyn: dyn, min: min, max: max),
+            child: MyChart(_list,
+                channel: 5,
+                channelName: '6',
+                color: colors[5],
+                dyn: dyn,
+                min: min,
+                max: max),
           ),
           Container(
             height: height,
-            child:
-                MyChart(_list, channel: 6, channelName: '7', color: colors[6], dyn: dyn, min: min, max: max),
+            child: MyChart(_list,
+                channel: 6,
+                channelName: '7',
+                color: colors[6],
+                dyn: dyn,
+                min: min,
+                max: max),
           ),
           Container(
             height: lastHeight,
-            child:
-                MyChart(_list, channel: 7, channelName: '8', color: colors[7], xAxis: true, dyn: dyn, min: min, max: max),
+            child: MyChart(_list,
+                channel: 7,
+                channelName: '8',
+                color: colors[7],
+                xAxis: true,
+                dyn: dyn,
+                min: min,
+                max: max),
           ),
         ],
       ),
