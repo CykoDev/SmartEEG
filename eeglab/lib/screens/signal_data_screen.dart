@@ -88,6 +88,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
     // File file = new File(pathOfTheFileToWrite);
     // String pathOfTheFileToWrite = '/storage/emulated/0/Android/data/com.example.eeglab/files/' + filename;
     // String pathOfTheFileToWrite = '/storage/emulated/0/Csvdata/' + filename;
+
     String pathOfTheFileToWrite = path + '/' + filename;
     print(pathOfTheFileToWrite);
     File file = new File(pathOfTheFileToWrite);

@@ -14,31 +14,48 @@ class HomeScreen extends StatelessWidget {
 
   void edf2csv() async {
 
+    final edf_content = await openedFile.readAsString();
     
     final response = await http.post(
-      Uri.https('smart-eeg.herokuapp.com', 'conversion/edftocsv2'),
-      body: "testString",
-     
+      Uri.https('smart-eeg.herokuapp.com', 'conversion/edftocsv'),
+      body: edf_content,
     );
-
-    // openedFileName
 
     int code = response.statusCode;
     print(code);
 
     _outputString = response.body;
+
+    String pathOfTheFileToWrite = path + tmpConversionFileName;
+    File tmpfile = new File(pathOfTheFileToWrite);
+
+    tmpfile.writeAsString(_outputString);
+
+    openedFile = File(tmpfile.path);
+    openedFileName = tmpConversionFileName;
   }
 
   void bdf2csv() async {
+
+    final bdf_content = await openedFile.readAsString();
+    
     final response = await http.post(
-      Uri.https('smart-eeg.herokuapp.com', 'conversion/bdftocsv2'),
-      body: "testString",
+      Uri.https('smart-eeg.herokuapp.com', 'conversion/bdftocsv'),
+      body: bdf_content,
     );
 
     int code = response.statusCode;
     print(code);
 
     _outputString = response.body;
+
+    String pathOfTheFileToWrite = path + tmpConversionFileName;
+    File tmpfile = new File(pathOfTheFileToWrite);
+
+    tmpfile.writeAsString(_outputString);
+
+    openedFile = File(tmpfile.path);
+    openedFileName = tmpConversionFileName;
   }
 
   
@@ -49,7 +66,7 @@ class HomeScreen extends StatelessWidget {
       allowedExtensions: [
         'csv',
         'edf',
-        // 'bdf',
+        'bdf',
         // 'xdf',
       ],
     );
@@ -61,10 +78,12 @@ class HomeScreen extends StatelessWidget {
         Navigator.of(context).pushNamed(CSVFileScreen.routeName);
       } 
       else if (file.extension == 'edf') {
-        
+        edf2csv();
+        Navigator.of(context).pushNamed(CSVFileScreen.routeName);
       }
       else if (file.extension == 'bdf') {
-        
+        bdf2csv();
+        Navigator.of(context).pushNamed(CSVFileScreen.routeName);
       }
     }
   }
