@@ -45,8 +45,16 @@ class _CSVFileScreenState extends State<CSVFileScreen> {
     int count = 0;
     List<EEGData> list = [];
     for (List<dynamic> field in fields) {
-      final fieldInt = List<int>.from(field);
-      final fieldDouble = fieldInt.map((e) => e.toDouble()).toList();
+      List<double> fieldDouble;
+      try {
+        fieldDouble = List<double>.from(field);
+      } catch (e) {
+        // final fieldInt = List<int>.from(field);
+        fieldDouble = field.map<double>((dynamic e) => double.parse(e.toString())).toList();
+        // fieldDouble = field;
+      }
+      // fieldDouble = List<double>.from(field);
+      // final fieldDouble = fieldInt.map((e) => e.toDouble()).toList();
       list.add(EEGData(count.toString(), fieldDouble));
       count += 1;
       // list2.add(double.parse(field[1].toString()), count);

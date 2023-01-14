@@ -6,9 +6,59 @@ import 'pairing_screen.dart';
 import 'csv_file_screen.dart';
 import 'edf_file_screen.dart';
 import '../data/variables.dart';
+import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatelessWidget {
   static String routeName = '/home';
+  String _outputString = 'File Format';
+
+  void edf2csv() async {
+
+    final edf_content = await openedFile.readAsString();
+    
+    final response = await http.post(
+      Uri.https('smart-eeg.herokuapp.com', 'conversion/edftocsv'),
+      body: edf_content,
+    );
+
+    int code = response.statusCode;
+    print(code);
+
+    _outputString = response.body;
+
+    String pathOfTheFileToWrite = path + tmpConversionFileName;
+    File tmpfile = new File(pathOfTheFileToWrite);
+
+    tmpfile.writeAsString(_outputString);
+
+    openedFile = File(tmpfile.path);
+    openedFileName = tmpConversionFileName;
+  }
+
+  void bdf2csv() async {
+
+    final bdf_content = await openedFile.readAsString();
+    
+    final response = await http.post(
+      Uri.https('smart-eeg.herokuapp.com', 'conversion/bdftocsv'),
+      body: bdf_content,
+    );
+
+    int code = response.statusCode;
+    print(code);
+
+    _outputString = response.body;
+
+    String pathOfTheFileToWrite = path + tmpConversionFileName;
+    File tmpfile = new File(pathOfTheFileToWrite);
+
+    tmpfile.writeAsString(_outputString);
+
+    openedFile = File(tmpfile.path);
+    openedFileName = tmpConversionFileName;
+  }
+
+  
 
   void pickFile(BuildContext context) async {
     FilePickerResult result = await FilePicker.platform.pickFiles(
@@ -16,7 +66,7 @@ class HomeScreen extends StatelessWidget {
       allowedExtensions: [
         'csv',
         'edf',
-        // 'bdf',
+        'bdf',
         // 'xdf',
       ],
     );
@@ -26,8 +76,14 @@ class HomeScreen extends StatelessWidget {
       openedFileName = file.name;
       if (file.extension == 'csv') {
         Navigator.of(context).pushNamed(CSVFileScreen.routeName);
-      } else {
-        
+      } 
+      else if (file.extension == 'edf') {
+        edf2csv();
+        Navigator.of(context).pushNamed(CSVFileScreen.routeName);
+      }
+      else if (file.extension == 'bdf') {
+        bdf2csv();
+        Navigator.of(context).pushNamed(CSVFileScreen.routeName);
       }
     }
   }
@@ -97,7 +153,7 @@ class HomeScreen extends StatelessWidget {
                           Expanded(
                             child: Center(
                               child: Text(
-                                '(CSV  |  EDF / BDF / XDF)',
+                                '(CSV)',
                                 style: TextStyle(fontSize: 25),
                               ),
                             ),

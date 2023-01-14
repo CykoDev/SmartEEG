@@ -41,19 +41,20 @@ class _PairingScreenState extends State<PairingScreen> {
 
       for (final s in dataString.split(',')) {
         eegData.add(double.parse(s));
+        // print(eegData);
       }
 
-      final sum = eegData.sublist(0, -1).reduce((a, b) => a + b);
-      if (sum != eegData[eegData.length - 1]) {
-        return;
-      }
+      // final sum = eegData.sublist(0, -1).reduce((a, b) => a + b);
+      // if (sum != eegData[eegData.length - 1]) {
+      //   return;
+      // }
 
       final timeSinceLast = DateTime.now().difference(last);
       if (timeSinceLast.inMilliseconds < 2 && highFreq) {
         return;
       }
 
-      if (timeSinceLast.inMilliseconds < 4 && !highFreq) {
+      if (timeSinceLast.inMilliseconds < 1 && !highFreq) {
         return;
       }
 

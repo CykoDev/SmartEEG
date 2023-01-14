@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
+import 'package:wakelock/wakelock.dart';
 
 import '../models/EEGData.dart';
 
@@ -20,12 +21,14 @@ class ElectrodesScreen extends StatefulWidget {
 }
 
 class _ElectrodesScreenState extends State<ElectrodesScreen> {
-  String _outputString = 'File Format';
+  String _outputString = 'Computing Impedance. Please wait...';
   double height = 30;
   double width = 180;
   List<double> _v = [0, 0, 0, 0, 0, 0, 0, 0];
   List<bool> _b = [false, false, false, false, false, false, false, false];
+  List<EEGData> list = [];
 
+  int count = 0;
   int counter = 1;
 
   @override
@@ -33,39 +36,51 @@ class _ElectrodesScreenState extends State<ElectrodesScreen> {
     // TODO: implement initState
     super.initState();
 
-    List<EEGData> list = [];
+    Wakelock.enable();
 
     streamController.stream.listen((data) {
-      list.add(data);
-      if (counter == 100) {
-        List<double> sumSq = [0, 0, 0, 0, 0, 0, 0, 0];
-        for (EEGData item in list) {
-          for (int i = 0; i < 8; i++) {
-            sumSq[i] += pow(item.data[i] * 0.02235, 2);
+      count++;
+      if (count >= 9) {
+        list.add(data);
+        if (counter == 100) {
+          changeText();
+          List<double> sumSq = [0, 0, 0, 0, 0, 0, 0, 0];
+          for (EEGData item in list) {
+            for (int i = 0; i < 8; i++) {
+              sumSq[i] += pow(item.data[i] * 0.02235, 2);
+              // print(item.data);
+            }
           }
+          List<bool> vals = [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ];
+          for (int i = 0; i < 8; i++) {
+            sumSq[i] = sqrt(sumSq[i] / 100) / 0.006;
+            vals[i] = sumSq[i] < 7000;
+          }
+          list.removeAt(0);
+          setState(() {
+            _v = sumSq;
+            _b = vals;
+          });
+        } else {
+          counter += 1;
         }
-        List<bool> vals = [
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false
-        ];
-        for (int i = 0; i < 8; i++) {
-          sumSq[i] = sqrt(sumSq[i] / 100) / 0.006;
-          vals[i] = sumSq[i] < 7000;
-        }
-        list.removeAt(0);
-        setState(() {
-          _v = sumSq;
-          _b = vals;
-        });
-      } else {
-        counter += 1;
+        count = 0;
       }
+    });
+  }
+
+  void changeText() {
+    setState(() {
+      _outputString = "";
     });
   }
 
@@ -287,6 +302,11 @@ class _ElectrodesScreenState extends State<ElectrodesScreen> {
                 ],
               ),
             ),
+            Container(
+              padding: EdgeInsets.all(10),
+              alignment: Alignment.center,
+              child: Text(_outputString),
+            )
           ],
         ),
       ),

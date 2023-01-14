@@ -1,7 +1,7 @@
-Executable : C:\Users\anast\AppData\Local\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe
+Executable : C:\Users\muham\AppData\Local\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe
 arguments : 
 -C
-C:\Users\anast\Documents\Development\Flutter\SmartEEG\eeglab\android\app\.cxx\cmake\debug\x86_64
+C:\Users\muham\Documents\FYP\SmartEEG\eeglab\android\app\.cxx\cmake\debug\x86_64
 native-lib
 jvmArgs : 
 

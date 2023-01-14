@@ -4,13 +4,13 @@ import os
 import numpy as np
 import mne
 import time
-from app.models.file_conversion.utils import write_mne_edf
-from app.models.file_conversion.utils import _stamp_to_dt
+# from app.models.file_conversion.utils import write_mne_edf
+# from app.models.file_conversion.utils import _stamp_to_dt
 
 
 file_conversion_controller = Blueprint('conversion', __name__, url_prefix='/conversion')
 
-@file_conversion_controller.route("/edf2csv", methods=['POST'])
+@file_conversion_controller.route("/edftocsv", methods=['POST'])
 def edf_to_csv2():
 
     tmp_edf_file = f'in_{time.time()}.edf'
@@ -23,24 +23,48 @@ def edf_to_csv2():
     tmp_csv_file = f'out_{time.time()}.csv'
     np.savetxt(UPLOAD_DIRECTORY+'/'+tmp_csv_file, edf.get_data().T, delimiter=',', header=header)
 
-    os.remove(UPLOAD_DIRECTORY+'/'+ tmp_edf_file)
-    return send_from_directory(UPLOAD_DIRECTORY, tmp_csv_file, as_attachment=True), 200
+    with open(UPLOAD_DIRECTORY+'/'+tmp_csv_file) as f:
+        s = f.read() + '\n'
 
+    return s, 200
 
-@file_conversion_controller.route("/csv2edf/<outputfilename>", methods=['POST'])
-def edf_to_csv2():
+    # os.remove(UPLOAD_DIRECTORY+'/'+ tmp_edf_file)
+    # return send_from_directory(UPLOAD_DIRECTORY, tmp_csv_file, as_attachment=True), 200
 
-    tmp_csv_file = f'in_{time.time()}.csv'
-    with open(os.path.join(UPLOAD_DIRECTORY, tmp_edf_file), "wb") as fp:
+@file_conversion_controller.route("/bdftocsv", methods=['POST'])
+def bdf_to_csv2():
+
+    tmp_bdf_file = f'in_{time.time()}.bdf'
+    with open(os.path.join(UPLOAD_DIRECTORY, tmp_bdf_file), "wb") as fp:
         fp.write(request.data)
 
     # perform conversion
-    
-    
-    return 200
+    bdf = mne.io.read_raw_bdf(UPLOAD_DIRECTORY + "\\" +tmp_bdf_file)
+    header = ','.join(bdf.ch_names)
+    tmp_csv_file = f'out_{time.time()}.csv'
+    np.savetxt(UPLOAD_DIRECTORY+'/'+ tmp_csv_file, bdf.get_data().T, delimiter=',', header=header)
+
+    with open(UPLOAD_DIRECTORY+'/'+ tmp_csv_file) as f:
+        s = f.read() + '\n'
+        
+    return s, 200
+
+    # os.remove(UPLOAD_DIRECTORY+'/'+ tmp_edf_file)
+    # return send_from_directory(UPLOAD_DIRECTORY, tmp_csv_file, as_attachment=True), 200
 
 
-# test route
-@file_conversion_controller.route("/download/<filename>", methods=['GET'])
-def download(filename):
-    return send_from_directory(UPLOAD_DIRECTORY, filename, as_attachment=True)
+# @file_conversion_controller.route("/csv2edf/<outputfilename>", methods=['POST'])
+# def edf_to_csv2():
+
+#     tmp_csv_file = f'in_{time.time()}.csv'
+#     with open(os.path.join(UPLOAD_DIRECTORY, tmp_edf_file), "wb") as fp:
+#         fp.write(request.data)
+
+#     # perform conversion
+#     return 200
+
+
+# # test route
+# @file_conversion_controller.route("/download/<filename>", methods=['GET'])
+# def download(filename):
+#     return send_from_directory(UPLOAD_DIRECTORY, filename, as_attachment=True)

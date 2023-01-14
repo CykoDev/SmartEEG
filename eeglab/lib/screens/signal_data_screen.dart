@@ -88,6 +88,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
     // File file = new File(pathOfTheFileToWrite);
     // String pathOfTheFileToWrite = '/storage/emulated/0/Android/data/com.example.eeglab/files/' + filename;
     // String pathOfTheFileToWrite = '/storage/emulated/0/Csvdata/' + filename;
+
     String pathOfTheFileToWrite = path + '/' + filename;
     print(pathOfTheFileToWrite);
     File file = new File(pathOfTheFileToWrite);
@@ -196,10 +197,10 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
 
   void stopStream() {
     print("stopping stream");
-    csvData = [
-      [1.0, 2.0],
-      [3.0, 4.0]
-    ];
+    // csvData = [
+    //   [1.0, 2.0],
+    //   [3.0, 4.0]
+    // ];
     if (csvData.length > 0) {
       saveToCsv(List.from(csvData), fileName);
       csvData = [];
@@ -343,7 +344,7 @@ class _SignalDataScreenState extends State<SignalDataScreen> {
       appBar: AppBar(
         leading: const BackButton(),
         title: const Text(
-          'SmartEEG',
+          'Live Data',
         ),
         actions: getActions(context),
       ),

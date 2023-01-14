@@ -3,7 +3,8 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 import '../models/EEGData.dart';
 
 class CSVChart extends StatefulWidget {
-  const CSVChart({Key key, this.list, this.channel, this.channelName}) : super(key: key);
+  const CSVChart({Key key, this.list, this.channel, this.channelName})
+      : super(key: key);
 
   @override
   _CSVChartState createState() => _CSVChartState();
@@ -19,8 +20,13 @@ class _CSVChartState extends State<CSVChart> {
     return Row(
       children: [
         Text(widget.channelName),
-        Expanded(child: SfCartesianChart(
-            zoomPanBehavior: ZoomPanBehavior(enablePanning: true, enablePinching: true, zoomMode: ZoomMode.x,),
+        Expanded(
+          child: SfCartesianChart(
+            zoomPanBehavior: ZoomPanBehavior(
+              enablePanning: true,
+              enablePinching: true,
+              zoomMode: ZoomMode.x,
+            ),
             tooltipBehavior: TooltipBehavior(enable: true),
             primaryXAxis: CategoryAxis(
               visibleMinimum: 0,
@@ -28,7 +34,11 @@ class _CSVChartState extends State<CSVChart> {
               // interval: 1,
               maximumLabels: 3,
             ),
-            primaryYAxis: NumericAxis(),
+            primaryYAxis: NumericAxis(
+                title: AxisTitle(
+              text: "uV",
+              textStyle: TextStyle(fontSize: 10),
+            )),
             series: <ChartSeries>[
               LineSeries<EEGData, String>(
                 dataSource: widget.list,
@@ -36,7 +46,8 @@ class _CSVChartState extends State<CSVChart> {
                 yValueMapper: (EEGData data, _) => data.data[widget.channel],
               ),
             ],
-          ),),
+          ),
+        ),
       ],
     );
   }

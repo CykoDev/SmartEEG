@@ -5,9 +5,9 @@
     "environmentVariables": []
   },
   "cmake": {
-    "cmakeArtifactsBaseFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
-    "cmakeServerLogFile": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a\\cmake_server_log.txt",
-    "cmakeWrappingBaseFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\debug\\arm64-v8a",
+    "cmakeArtifactsBaseFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
+    "cmakeServerLogFile": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a\\cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cxx\\debug\\arm64-v8a",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -15,13 +15,13 @@
       "inheritEnvironments": [
         "ndk"
       ],
-      "buildRoot": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
-      "cmakeToolchain": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
-      "cmakeExecutable": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+      "buildRoot": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
+      "cmakeToolchain": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
+      "cmakeExecutable": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
       "variables": [
         {
           "name": "CMAKE_FIND_ROOT_PATH",
-          "value": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab\\arm64-v8a\\prefab"
+          "value": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab\\arm64-v8a\\prefab"
         },
         {
           "name": "CMAKE_BUILD_TYPE",
@@ -29,7 +29,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake"
+          "value": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake"
         },
         {
           "name": "ANDROID_ABI",
@@ -37,7 +37,7 @@
         },
         {
           "name": "ANDROID_NDK",
-          "value": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061"
+          "value": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061"
         },
         {
           "name": "ANDROID_PLATFORM",
@@ -49,7 +49,7 @@
         },
         {
           "name": "CMAKE_ANDROID_NDK",
-          "value": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061"
+          "value": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061"
         },
         {
           "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
@@ -57,11 +57,11 @@
         },
         {
           "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
-          "value": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\debug\\obj\\arm64-v8a"
+          "value": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\debug\\obj\\arm64-v8a"
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
-          "value": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+          "value": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
         },
         {
           "name": "CMAKE_SYSTEM_NAME",
@@ -74,14 +74,14 @@
       ]
     }
   },
-  "cxxBuildFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
+  "cxxBuildFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
   "info": {
     "abi": "ARM64_V8A",
     "bitness": 64,
     "deprecated": false,
     "default": true
   },
-  "originalCxxBuildFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
+  "originalCxxBuildFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a",
   "variant": {
     "buildSystemArgumentList": [],
     "buildTargetSet": [],
@@ -95,24 +95,24 @@
     "module": {
       "buildSystem": "CMAKE",
       "cmake": {
-        "cmakeExe": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+        "cmakeExe": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
         "minimumCmakeVersion": "3.10.2",
-        "ninjaExe": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+        "ninjaExe": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
       },
-      "cmakeToolchainFile": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
-      "cxxFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx",
+      "cmakeToolchainFile": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\build\\cmake\\android.toolchain.cmake",
+      "cxxFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx",
       "gradleModulePathName": ":app",
-      "intermediatesFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\build\\app\\intermediates",
-      "makeFile": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\CMakeLists.txt",
-      "moduleBuildFile": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\build.gradle",
-      "moduleRootFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app",
+      "intermediatesFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\build\\app\\intermediates",
+      "makeFile": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\CMakeLists.txt",
+      "moduleBuildFile": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\build.gradle",
+      "moduleRootFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
         "X86",
         "X86_64"
       ],
-      "ndkFolder": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061",
+      "ndkFolder": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061",
       "ndkMetaAbiList": [
         {
           "abi": "ARMEABI_V7A",
@@ -170,29 +170,29 @@
       "ndkDefaultStl": "LIBCXX_STATIC",
       "ndkVersion": "22.0.7026061",
       "project": {
-        "compilerSettingsCacheFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\.cxx",
-        "cxxFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\.cxx",
+        "compilerSettingsCacheFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\.cxx",
+        "cxxFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\.cxx",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android",
-        "sdkFolder": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk",
+        "rootBuildGradleFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android",
+        "sdkFolder": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk",
         "isPrefabEnabled": false
       },
       "splitsAbiFilterSet": [],
       "stlSharedObjectMap": {
         "LIBCXX_SHARED": {
-          "ARMEABI_V7A": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
-          "ARM64_V8A": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
-          "X86": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
-          "X86_64": "C:\\Users\\anast\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+          "ARMEABI_V7A": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "C:\\Users\\muham\\AppData\\Local\\Android\\sdk\\ndk\\22.0.7026061\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
         },
         "LIBCXX_STATIC": {},
         "NONE": {},
         "SYSTEM": {}
       }
     },
-    "objFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\debug\\obj",
+    "objFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\build\\app\\intermediates\\cmake\\debug\\obj",
     "variantName": "debug",
     "validAbiList": [
       "ARMEABI_V7A",
@@ -200,8 +200,8 @@
       "X86",
       "X86_64"
     ],
-    "prefabDirectory": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab",
+    "prefabDirectory": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab",
     "prefabPackageDirectoryList": []
   },
-  "prefabFolder": "C:\\Users\\anast\\Documents\\Development\\Flutter\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab\\arm64-v8a"
+  "prefabFolder": "C:\\Users\\muham\\Documents\\FYP\\SmartEEG\\eeglab\\android\\app\\.cxx\\cmake\\debug\\prefab\\arm64-v8a"
 }

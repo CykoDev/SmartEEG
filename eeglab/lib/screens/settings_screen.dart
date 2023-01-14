@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:file_picker/file_picker.dart';
 import '../data/variables.dart';
+
 class SettingsScreen extends StatefulWidget {
   static String routeName = '/settings';
 
@@ -110,6 +111,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
             subtitle: Text("Keep vertical axis dynamic or specify range"),
             value: dyn,
             onChanged: (value) => toggleDynamic(value, context),
+          ),
+          SwitchListTile(
+            title: Text("Data Frequency"),
+            subtitle: Text(highFreq ? "500Hz" : "250Hz"),
+            secondary: Icon(Icons.access_time_sharp),
+            value: highFreq,
+            onChanged: (value) {
+              setState(() {
+                highFreq = value;
+              });
+            },
           ),
         ],
       ),

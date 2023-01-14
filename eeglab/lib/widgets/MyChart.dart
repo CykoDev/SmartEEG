@@ -52,8 +52,9 @@ class _MyChartState extends State<MyChart> {
                 isVisible: widget.xAxis,
                 // interval: 5,
               ),
+              
               primaryYAxis: widget.dyn
-                  ? NumericAxis()
+                  ? NumericAxis(title: AxisTitle(text: "uV",textStyle: TextStyle(fontSize: 10),),)
                   : NumericAxis(
                       maximum: widget.max,
                       minimum: widget.min,
